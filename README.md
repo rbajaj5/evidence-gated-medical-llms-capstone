@@ -1,5 +1,7 @@
 # Evidence-Gated Medical LLMs Capstone
 
+[![tests](https://github.com/rbajaj5/evidence-gated-medical-llms-capstone/actions/workflows/tests.yml/badge.svg)](https://github.com/rbajaj5/evidence-gated-medical-llms-capstone/actions/workflows/tests.yml)
+
 Public research artifact for the Module 14 AI-in-healthcare capstone:
 
 **Surrogate-Aware Runtime Assurance for Agentic Medical LLMs: Preventing Evidence Overclaiming in Clinician-Facing AI Systems**
