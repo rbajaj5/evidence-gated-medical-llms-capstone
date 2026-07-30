@@ -1,0 +1,54 @@
+{
+  "source_pdf": "https://cseweb.ucsd.edu/~mihir/papers/ug.pdf",
+  "universe_size": 180,
+  "admissible_witness_count": 29,
+  "biased_top_witness_count": 5,
+  "uniform_endpoint_distribution": {
+    "hard_outcome": 0.034482758620689655,
+    "validated_surrogate": 0.13793103448275862,
+    "surrogate": 0.5517241379310345,
+    "process": 0.27586206896551724
+  },
+  "biased_endpoint_distribution": {
+    "hard_outcome": 0.2,
+    "validated_surrogate": 0.6,
+    "surrogate": 0.2,
+    "process": 0.0
+  },
+  "uniform_hard_outcome_fraction": 0.034482758620689655,
+  "biased_hard_outcome_fraction": 0.2,
+  "variation_distance_from_uniform": 0.8275862068965517,
+  "top_five_witnesses": [
+    {
+      "endpoint": "hard_outcome",
+      "design": "pragmatic_rct",
+      "population": "match",
+      "provenance": "verified"
+    },
+    {
+      "endpoint": "validated_surrogate",
+      "design": "pragmatic_rct",
+      "population": "match",
+      "provenance": "verified"
+    },
+    {
+      "endpoint": "surrogate",
+      "design": "pragmatic_rct",
+      "population": "match",
+      "provenance": "verified"
+    },
+    {
+      "endpoint": "validated_surrogate",
+      "design": "pragmatic_rct",
+      "population": "plausible",
+      "provenance": "verified"
+    },
+    {
+      "endpoint": "validated_surrogate",
+      "design": "rct",
+      "population": "match",
+      "provenance": "verified"
+    }
+  ],
+  "runtime_interpretation": "Evidence evaluation should enumerate or sample admissible witnesses under an explicit relation; surfacing only strong-looking witnesses biases the perceived claim space."
+}

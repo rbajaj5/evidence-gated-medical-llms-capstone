@@ -1,0 +1,41 @@
+{
+  "history_space_size": 144,
+  "source_measure_count": 4,
+  "meta_measure_total_mass": 1.0,
+  "source_summaries": {
+    "us_ehr_like": {
+      "unsafe_promotion_probability": 0.20306008362326225,
+      "audit_trigger_probability": 0.5402298850574713,
+      "total_mass": 1.0
+    },
+    "genomeindia_like": {
+      "unsafe_promotion_probability": 0.20731972597880252,
+      "audit_trigger_probability": 0.6415770609318996,
+      "total_mass": 1.0
+    },
+    "latin_america_admixed_like": {
+      "unsafe_promotion_probability": 0.20767574932054725,
+      "audit_trigger_probability": 0.6212121212121212,
+      "total_mass": 1.0
+    },
+    "israel_biobank_like": {
+      "unsafe_promotion_probability": 0.2001782436672207,
+      "audit_trigger_probability": 0.4891443167305236,
+      "total_mass": 1.0
+    }
+  },
+  "mixture_summary": {
+    "unsafe_promotion_probability": 0.20482883347597508,
+    "audit_trigger_probability": 0.5791676498016876,
+    "total_mass": 0.9999999999999999
+  },
+  "total_variation_to_mixture": {
+    "us_ehr_like": 0.08169280916551068,
+    "genomeindia_like": 0.07908390040016351,
+    "latin_america_admixed_like": 0.08812477599030871,
+    "israel_biobank_like": 0.10577761750728382
+  },
+  "max_source_tv_to_mixture": 0.10577761750728382,
+  "source_with_highest_audit_probability": "genomeindia_like",
+  "interpretation": "A measure over measures represents source-distribution uncertainty. The assurance policy should be tested on each source measure and on the meta-measure mixture, because a safe-looking aggregate can still hide a high-risk source distribution."
+}

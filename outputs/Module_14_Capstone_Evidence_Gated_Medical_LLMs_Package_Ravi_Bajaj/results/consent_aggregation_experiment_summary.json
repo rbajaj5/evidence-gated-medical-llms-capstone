@@ -1,0 +1,108 @@
+{
+  "source": "Arrow social-choice stress case plus Boltzmann/softmax allocation audit",
+  "option_count": 3,
+  "relative_count": 3,
+  "pairwise_majorities": {
+    "full_raw_genome_reuse__vs__trait_specific_partial_inclusion": {
+      "winner": "full_raw_genome_reuse",
+      "loser": "trait_specific_partial_inclusion",
+      "margin": 1,
+      "votes_for_a": 2,
+      "votes_for_b": 1
+    },
+    "full_raw_genome_reuse__vs__audit_only_no_reuse": {
+      "winner": "audit_only_no_reuse",
+      "loser": "full_raw_genome_reuse",
+      "margin": 1,
+      "votes_for_a": 1,
+      "votes_for_b": 2
+    },
+    "trait_specific_partial_inclusion__vs__audit_only_no_reuse": {
+      "winner": "trait_specific_partial_inclusion",
+      "loser": "audit_only_no_reuse",
+      "margin": 1,
+      "votes_for_a": 2,
+      "votes_for_b": 1
+    }
+  },
+  "condorcet_cycle_detected": true,
+  "feasible_under_all_individual_caps": {
+    "full_raw_genome_reuse": false,
+    "trait_specific_partial_inclusion": true,
+    "audit_only_no_reuse": true
+  },
+  "within_runtime_privacy_budget": {
+    "full_raw_genome_reuse": false,
+    "trait_specific_partial_inclusion": true,
+    "audit_only_no_reuse": true
+  },
+  "runtime_safe_options": {
+    "full_raw_genome_reuse": false,
+    "trait_specific_partial_inclusion": true,
+    "audit_only_no_reuse": true
+  },
+  "runtime_budget": {
+    "epsilon": 1.0,
+    "delta": 1e-06
+  },
+  "privacy_costs": {
+    "full_raw_genome_reuse": {
+      "epsilon": 6.0,
+      "delta": 1e-05
+    },
+    "trait_specific_partial_inclusion": {
+      "epsilon": 0.8,
+      "delta": 1e-07
+    },
+    "audit_only_no_reuse": {
+      "epsilon": 0.05,
+      "delta": 0.0
+    }
+  },
+  "partial_plus_audit_composed_loss": {
+    "epsilon": 0.8500000000000001,
+    "delta": 1e-07
+  },
+  "group_privacy_bound_for_partial_three_relatives": {
+    "epsilon": 2.4000000000000004,
+    "delta_linear_upper_bound": 3e-07
+  },
+  "full_raw_release_allowed": false,
+  "partial_inclusion_allowed": true,
+  "audit_only_allowed": true,
+  "full_raw_release_runtime_safe": false,
+  "partial_inclusion_runtime_safe": true,
+  "audit_only_runtime_safe": true,
+  "safe_runtime_action": "PRESERVE_CONSENT_BOUNDARY",
+  "boltzmann_beta_rows": [
+    {
+      "beta": 0.0,
+      "allocation": {
+        "trait_specific_partial_inclusion": 0.5,
+        "audit_only_no_reuse": 0.5
+      },
+      "entropy": 0.6931471805599453,
+      "support_size": 2
+    },
+    {
+      "beta": 1.0,
+      "allocation": {
+        "trait_specific_partial_inclusion": 0.5473576181430893,
+        "audit_only_no_reuse": 0.4526423818569108
+      },
+      "entropy": 0.6886549618514264,
+      "support_size": 2
+    },
+    {
+      "beta": 4.0,
+      "allocation": {
+        "trait_specific_partial_inclusion": 0.6813537337890254,
+        "audit_only_no_reuse": 0.31864626621097447
+      },
+      "entropy": 0.6258448371348346,
+      "support_size": 2
+    }
+  ],
+  "entropy_decreases_with_beta": true,
+  "interpretation": "A ranked family profile can cycle, and individual consent caps can make full raw release infeasible. The safe monitor preserves per-relative constraints and allows only options that are both consent-feasible and inside the runtime privacy budget; softmax/Boltzmann allocation is an auditable budget policy inside the feasible set, not a substitute for consent."
+}

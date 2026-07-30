@@ -1,0 +1,131 @@
+{
+  "experiment": "loop_equation_runtime_stability_probe",
+  "clinical_status": "synthetic mathematical analogy only",
+  "source": "Bourgade-Huang loop-equation characterization, Gronwall/resolvent-stability/switching-calculus excerpts",
+  "required_gate_count": 6,
+  "required_gates": [
+    "local_law_or_calibration",
+    "integration_by_parts_or_switching_identity",
+    "single_entry_stability",
+    "cumulant_or_residual_error_bound",
+    "gronwall_growth_budget",
+    "source_population_context"
+  ],
+  "chain_count": 2,
+  "stable_chain_passes": true,
+  "unstable_chain_passes": false,
+  "stable_final_error": 0.017301848233600002,
+  "unstable_final_error": 0.179236398592,
+  "stable_budget": 0.05,
+  "unstable_budget": 0.05,
+  "single_entry": {
+    "n": 1048576,
+    "gamma": 0.05,
+    "lambda_bound": 2.0,
+    "gamma_below_one_twelfth": true,
+    "single_entry_bound": 0.0078125,
+    "single_entry_budget": 0.01,
+    "single_entry_stable": true
+  },
+  "cumulant_budget": {
+    "n": 1048576,
+    "d": 1024,
+    "gamma": 0.05,
+    "moment_order": 4,
+    "lambda_bound": 2.0,
+    "gamma_below_one_twelfth": true,
+    "bad_event_probability": 3.4416198398072404e-84,
+    "bad_event_expectation_bound": 4.160663085640937e-60,
+    "bad_event_negligible": true,
+    "main_cancellation": {
+      "positive_m2_term": 1.0,
+      "negative_m2_term": -1.0,
+      "net": 0.0
+    },
+    "main_cancellation_passes": true,
+    "replacement_error_scale": 0.25,
+    "replacement_error_budget": 0.35,
+    "replacement_error_inside_budget": true,
+    "derivative_error_exponent": -0.09999999999999998,
+    "derivative_error_decays": true,
+    "requires_que_or_spatial_profile_gate": true
+  },
+  "permission": "UNIVERSALITY_AUDIT_ONLY",
+  "switching_calculus_interpretation": "For sparse network-like inputs, local switching or edge updates should be treated as a perturbation audit. A model cannot transport a claim across source populations unless local-law, perturbation, and residual gates pass.",
+  "csv": "results\\loop_equation_runtime_stability.csv",
+  "figure": "figures\\loop_equation_runtime_stability.png",
+  "rows": [
+    {
+      "name": "stable_multimodal_transfer",
+      "initial_error": 0.003,
+      "lipschitz": [
+        0.05,
+        0.06,
+        0.04,
+        0.05,
+        0.04,
+        0.03
+      ],
+      "residuals": [
+        0.002,
+        0.002,
+        0.003,
+        0.002,
+        0.002,
+        0.001
+      ],
+      "budget": 0.05,
+      "interpretation": "Small residuals remain inside the runtime budget after representation transfers.",
+      "trace": [
+        0.003,
+        0.00515,
+        0.007459,
+        0.01075736,
+        0.013295228000000001,
+        0.01582703712,
+        0.017301848233600002
+      ],
+      "final_error": 0.017301848233600002,
+      "exponential_gronwall_upper": 0.01964946676099871,
+      "passes_budget": true,
+      "upper_passes_budget": true,
+      "runtime_action": "ALLOW_AUDIT_ARTIFACT"
+    },
+    {
+      "name": "unstable_missing_provenance_transfer",
+      "initial_error": 0.01,
+      "lipschitz": [
+        0.18,
+        0.22,
+        0.2,
+        0.18,
+        0.2,
+        0.16
+      ],
+      "residuals": [
+        0.012,
+        0.016,
+        0.02,
+        0.018,
+        0.016,
+        0.014
+      ],
+      "budget": 0.05,
+      "interpretation": "Missing provenance and larger residuals exceed the budget even if each local step looks plausible.",
+      "trace": [
+        0.01,
+        0.0238,
+        0.04503600000000001,
+        0.0740432,
+        0.105370976,
+        0.1424451712,
+        0.179236398592
+      ],
+      "final_error": 0.179236398592,
+      "exponential_gronwall_upper": 0.3314374467097326,
+      "passes_budget": false,
+      "upper_passes_budget": false,
+      "runtime_action": "ABSTAIN_STABILITY"
+    }
+  ]
+}

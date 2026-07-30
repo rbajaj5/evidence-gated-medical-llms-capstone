@@ -1,0 +1,31 @@
+.pytest_cache/
+__pycache__/
+*.pyc
+*.pyo
+*.tmp
+*.log
+
+# Local scratch and QA renders
+tmp/
+study/
+stage1_abstract_release_assurance/
+work/qa_*/
+work/video_inspect/
+work/.packages/
+work/external/
+work/external_references/
+
+# Ignore old generated drafts by default.
+outputs/*
+!outputs/Module_14_Capstone_Evidence_Gated_Medical_LLMs_Package_Ravi_Bajaj.zip
+!outputs/Module_14_Capstone_Evidence_Gated_Medical_LLMs_Package_Ravi_Bajaj/
+!outputs/Module_14_Capstone_Evidence_Gated_Medical_LLMs_Package_Ravi_Bajaj/**
+
+# Keep only reproducible capstone source under work.
+work/*
+!work/build_evidence_gated_llm_capstone_package.py
+!work/export_docx_with_word.py
+!work/evidence_gated_llm_capstone/
+!work/evidence_gated_llm_capstone/**
+work/evidence_gated_llm_capstone/__pycache__/
+work/evidence_gated_llm_capstone/.pytest_cache/

@@ -1,0 +1,70 @@
+{
+  "feature_count": 6,
+  "source_count": 4,
+  "action_threshold": 2.0,
+  "source_rows": {
+    "us_ehr_like": {
+      "mahalanobis_distance": 0.4049357016889648,
+      "requires_source_specific_validation": false,
+      "largest_contribution_feature": "missingness_scaled",
+      "largest_contribution_value": 0.08000000000000002,
+      "contributions": {
+        "pc1_ancestry": 0.010000000000000002,
+        "pc2_ancestry": 0.002941176470588236,
+        "mean_age_scaled": 0.03214285714285715,
+        "rural_access_scaled": 0.01666666666666667,
+        "missingness_scaled": 0.08000000000000002,
+        "privacy_constraint_scaled": 0.022222222222222227
+      }
+    },
+    "genomeindia_like": {
+      "mahalanobis_distance": 2.408310677105493,
+      "requires_source_specific_validation": true,
+      "largest_contribution_feature": "pc1_ancestry",
+      "largest_contribution_value": 2.1025,
+      "contributions": {
+        "pc1_ancestry": 2.1025,
+        "pc2_ancestry": 0.85,
+        "mean_age_scaled": 0.003571428571428572,
+        "rural_access_scaled": 0.8166666666666665,
+        "missingness_scaled": 0.6050000000000001,
+        "privacy_constraint_scaled": 1.4222222222222225
+      }
+    },
+    "latin_america_admixed_like": {
+      "mahalanobis_distance": 2.028724629609067,
+      "requires_source_specific_validation": true,
+      "largest_contribution_feature": "pc2_ancestry",
+      "largest_contribution_value": 1.5558823529411763,
+      "contributions": {
+        "pc1_ancestry": 0.9025,
+        "pc2_ancestry": 1.5558823529411763,
+        "mean_age_scaled": 0.014285714285714289,
+        "rural_access_scaled": 0.20416666666666664,
+        "missingness_scaled": 0.5,
+        "privacy_constraint_scaled": 0.938888888888889
+      }
+    },
+    "israel_biobank_like": {
+      "mahalanobis_distance": 0.6278287990636514,
+      "requires_source_specific_validation": false,
+      "largest_contribution_feature": "privacy_constraint_scaled",
+      "largest_contribution_value": 0.1388888888888889,
+      "contributions": {
+        "pc1_ancestry": 0.12249999999999998,
+        "pc2_ancestry": 0.026470588235294117,
+        "mean_age_scaled": 0.057142857142857155,
+        "rural_access_scaled": 0.0041666666666666675,
+        "missingness_scaled": 0.045,
+        "privacy_constraint_scaled": 0.1388888888888889
+      }
+    }
+  },
+  "flagged_sources": [
+    "genomeindia_like",
+    "latin_america_admixed_like"
+  ],
+  "max_distance_source": "genomeindia_like",
+  "max_distance": 2.408310677105493,
+  "interpretation": "Mahalanobis distance turns population/covariate fit into a runtime transport gate. A source with large covariance-adjusted distance from the reference distribution should be routed to source-specific validation, not aggregate claim transport."
+}

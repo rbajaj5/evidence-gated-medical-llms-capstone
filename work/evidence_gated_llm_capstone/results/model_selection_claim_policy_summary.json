@@ -1,0 +1,2020 @@
+{
+  "scenario_count": 30,
+  "matched_expected_count": 30,
+  "all_matched_expected": true,
+  "candidate_model_count": 19,
+  "model_selection_rule": "Select the claim model with minimum information-criterion style loss, penalizing missing evidence, forbidden boundary crossings, complexity, nested dependency burden, and authority risk.",
+  "fifo_lifo_policy": "FIFO preserves audit replay; LIFO/backtracking is acceptable for search or diagram construction; runtime safety decisions are priority-ordered by boundary-crossing risk.",
+  "scenario_rows": [
+    {
+      "scenario_id": "S01",
+      "label": "MRI second-reader human-baseline correction",
+      "expected_action": "ALLOW_BOUNDED_SECOND_READER",
+      "selected_action": "ALLOW_BOUNDED_SECOND_READER",
+      "selected_model": "bounded_second_reader",
+      "selected_loss": 12,
+      "matches_expected": true,
+      "features": [
+        "chain_terminal_local",
+        "citation_course_or_local",
+        "clinician_authority_retained",
+        "context_available",
+        "design_case",
+        "endpoint_local_case",
+        "opportunity_low",
+        "population_match"
+      ],
+      "top_losses": [
+        {
+          "model": "bounded_second_reader",
+          "action": "ALLOW_BOUNDED_SECOND_READER",
+          "loss": 12,
+          "missing": [],
+          "forbidden_present": [],
+          "complexity": 2,
+          "nested_burden": 0,
+          "authority_risk": 1
+        },
+        {
+          "model": "deny_unverifiable_citation",
+          "action": "DENY_CITATION",
+          "loss": 102,
+          "missing": [
+            "citation_unverifiable"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 0,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_deferred_chain",
+          "action": "ABSTAIN_EVIDENCE_CHAIN",
+          "loss": 112,
+          "missing": [
+            "chain_deferred"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 2,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_context_missing",
+          "action": "ABSTAIN_CONTEXT",
+          "loss": 115,
+          "missing": [
+            "context_material_missing"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 1,
+          "authority_risk": 1
+        }
+      ]
+    },
+    {
+      "scenario_id": "S02",
+      "label": "Surrogate detection-rate overclaim",
+      "expected_action": "NARROW_TO_SURROGATE",
+      "selected_action": "NARROW_TO_SURROGATE",
+      "selected_model": "narrow_surrogate_claim",
+      "selected_loss": 19,
+      "matches_expected": true,
+      "features": [
+        "chain_terminal_surrogate",
+        "citation_verified",
+        "clinician_authority_retained",
+        "context_partial",
+        "design_rct",
+        "endpoint_surrogate",
+        "opportunity_unknown",
+        "population_plausible"
+      ],
+      "top_losses": [
+        {
+          "model": "narrow_surrogate_claim",
+          "action": "NARROW_TO_SURROGATE",
+          "loss": 19,
+          "missing": [],
+          "forbidden_present": [],
+          "complexity": 3,
+          "nested_burden": 1,
+          "authority_risk": 1
+        },
+        {
+          "model": "deny_unverifiable_citation",
+          "action": "DENY_CITATION",
+          "loss": 102,
+          "missing": [
+            "citation_unverifiable"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 0,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_deferred_chain",
+          "action": "ABSTAIN_EVIDENCE_CHAIN",
+          "loss": 112,
+          "missing": [
+            "chain_deferred"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 2,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_context_missing",
+          "action": "ABSTAIN_CONTEXT",
+          "loss": 115,
+          "missing": [
+            "context_material_missing"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 1,
+          "authority_risk": 1
+        }
+      ]
+    },
+    {
+      "scenario_id": "S03",
+      "label": "Hard patient-outcome pragmatic RCT",
+      "expected_action": "ALLOW_CAUTIOUS_CLINICIAN_SUMMARY",
+      "selected_action": "ALLOW_CAUTIOUS_CLINICIAN_SUMMARY",
+      "selected_model": "hard_outcome_pragmatic_rct",
+      "selected_loss": 31,
+      "matches_expected": true,
+      "features": [
+        "chain_terminal_outcome",
+        "citation_verified",
+        "clinician_authority_retained",
+        "context_available",
+        "design_pragmatic_rct",
+        "endpoint_hard_outcome",
+        "opportunity_addressed",
+        "population_match"
+      ],
+      "top_losses": [
+        {
+          "model": "hard_outcome_pragmatic_rct",
+          "action": "ALLOW_CAUTIOUS_CLINICIAN_SUMMARY",
+          "loss": 31,
+          "missing": [],
+          "forbidden_present": [],
+          "complexity": 5,
+          "nested_burden": 1,
+          "authority_risk": 2
+        },
+        {
+          "model": "deny_unverifiable_citation",
+          "action": "DENY_CITATION",
+          "loss": 102,
+          "missing": [
+            "citation_unverifiable"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 0,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_deferred_chain",
+          "action": "ABSTAIN_EVIDENCE_CHAIN",
+          "loss": 112,
+          "missing": [
+            "chain_deferred"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 2,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_context_missing",
+          "action": "ABSTAIN_CONTEXT",
+          "loss": 115,
+          "missing": [
+            "context_material_missing"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 1,
+          "authority_risk": 1
+        }
+      ]
+    },
+    {
+      "scenario_id": "S04",
+      "label": "Fabricated or unverifiable citation",
+      "expected_action": "DENY_CITATION",
+      "selected_action": "DENY_CITATION",
+      "selected_model": "deny_unverifiable_citation",
+      "selected_loss": 2,
+      "matches_expected": true,
+      "features": [
+        "chain_no_terminal",
+        "citation_unverifiable",
+        "clinician_authority_retained",
+        "context_missing",
+        "design_unverifiable",
+        "endpoint_none",
+        "opportunity_unknown",
+        "population_unknown"
+      ],
+      "top_losses": [
+        {
+          "model": "deny_unverifiable_citation",
+          "action": "DENY_CITATION",
+          "loss": 2,
+          "missing": [],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 0,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_deferred_chain",
+          "action": "ABSTAIN_EVIDENCE_CHAIN",
+          "loss": 112,
+          "missing": [
+            "chain_deferred"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 2,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_context_missing",
+          "action": "ABSTAIN_CONTEXT",
+          "loss": 115,
+          "missing": [
+            "context_material_missing"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 1,
+          "authority_risk": 1
+        },
+        {
+          "model": "abstain_provenance_gap",
+          "action": "ABSTAIN_PROVENANCE",
+          "loss": 252,
+          "missing": [],
+          "forbidden_present": [
+            "citation_unverifiable"
+          ],
+          "complexity": 1,
+          "nested_burden": 0,
+          "authority_risk": 0
+        }
+      ]
+    },
+    {
+      "scenario_id": "S05",
+      "label": "Population transport gap",
+      "expected_action": "ABSTAIN_TRANSPORT",
+      "selected_action": "ABSTAIN_TRANSPORT",
+      "selected_model": "abstain_transport_gap",
+      "selected_loss": 17,
+      "matches_expected": true,
+      "features": [
+        "chain_terminal_surrogate",
+        "citation_verified",
+        "clinician_authority_retained",
+        "context_partial",
+        "design_validation",
+        "endpoint_surrogate",
+        "opportunity_unknown",
+        "population_mismatch"
+      ],
+      "top_losses": [
+        {
+          "model": "abstain_transport_gap",
+          "action": "ABSTAIN_TRANSPORT",
+          "loss": 17,
+          "missing": [],
+          "forbidden_present": [],
+          "complexity": 2,
+          "nested_burden": 1,
+          "authority_risk": 1
+        },
+        {
+          "model": "deny_unverifiable_citation",
+          "action": "DENY_CITATION",
+          "loss": 102,
+          "missing": [
+            "citation_unverifiable"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 0,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_deferred_chain",
+          "action": "ABSTAIN_EVIDENCE_CHAIN",
+          "loss": 112,
+          "missing": [
+            "chain_deferred"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 2,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_context_missing",
+          "action": "ABSTAIN_CONTEXT",
+          "loss": 115,
+          "missing": [
+            "context_material_missing"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 1,
+          "authority_risk": 1
+        }
+      ]
+    },
+    {
+      "scenario_id": "S06",
+      "label": "CLOT low acceptance",
+      "expected_action": "ESCALATE_WORKFLOW_DIAGNOSIS",
+      "selected_action": "ESCALATE_WORKFLOW_DIAGNOSIS",
+      "selected_model": "workflow_diagnosis",
+      "selected_loss": 17,
+      "matches_expected": true,
+      "features": [
+        "chain_terminal_process",
+        "citation_verified",
+        "clinician_filtering_possible",
+        "context_available",
+        "design_pragmatic_rct",
+        "endpoint_process",
+        "opportunity_addressed",
+        "population_match"
+      ],
+      "top_losses": [
+        {
+          "model": "workflow_diagnosis",
+          "action": "ESCALATE_WORKFLOW_DIAGNOSIS",
+          "loss": 17,
+          "missing": [],
+          "forbidden_present": [],
+          "complexity": 2,
+          "nested_burden": 1,
+          "authority_risk": 1
+        },
+        {
+          "model": "deny_unverifiable_citation",
+          "action": "DENY_CITATION",
+          "loss": 102,
+          "missing": [
+            "citation_unverifiable"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 0,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_deferred_chain",
+          "action": "ABSTAIN_EVIDENCE_CHAIN",
+          "loss": 112,
+          "missing": [
+            "chain_deferred"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 2,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_context_missing",
+          "action": "ABSTAIN_CONTEXT",
+          "loss": 115,
+          "missing": [
+            "context_material_missing"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 1,
+          "authority_risk": 1
+        }
+      ]
+    },
+    {
+      "scenario_id": "S07",
+      "label": "ANA opportunity-cost screen",
+      "expected_action": "ABSTAIN_OPPORTUNITY_COST",
+      "selected_action": "ABSTAIN_OPPORTUNITY_COST",
+      "selected_model": "abstain_opportunity_cost",
+      "selected_loss": 17,
+      "matches_expected": true,
+      "features": [
+        "chain_terminal_process",
+        "citation_verified",
+        "clinician_authority_retained",
+        "context_partial",
+        "design_observational",
+        "endpoint_process",
+        "opportunity_unaddressed_high",
+        "population_plausible"
+      ],
+      "top_losses": [
+        {
+          "model": "abstain_opportunity_cost",
+          "action": "ABSTAIN_OPPORTUNITY_COST",
+          "loss": 17,
+          "missing": [],
+          "forbidden_present": [],
+          "complexity": 2,
+          "nested_burden": 1,
+          "authority_risk": 1
+        },
+        {
+          "model": "deny_unverifiable_citation",
+          "action": "DENY_CITATION",
+          "loss": 102,
+          "missing": [
+            "citation_unverifiable"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 0,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_deferred_chain",
+          "action": "ABSTAIN_EVIDENCE_CHAIN",
+          "loss": 112,
+          "missing": [
+            "chain_deferred"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 2,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_context_missing",
+          "action": "ABSTAIN_CONTEXT",
+          "loss": 115,
+          "missing": [
+            "context_material_missing"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 1,
+          "authority_risk": 1
+        }
+      ]
+    },
+    {
+      "scenario_id": "S08",
+      "label": "Yablo-style deferred evidence chain",
+      "expected_action": "ABSTAIN_EVIDENCE_CHAIN",
+      "selected_action": "ABSTAIN_EVIDENCE_CHAIN",
+      "selected_model": "abstain_deferred_chain",
+      "selected_loss": 12,
+      "matches_expected": true,
+      "features": [
+        "chain_deferred",
+        "citation_verified",
+        "clinician_authority_retained",
+        "context_missing",
+        "design_observational",
+        "endpoint_none",
+        "opportunity_unknown",
+        "population_unknown"
+      ],
+      "top_losses": [
+        {
+          "model": "abstain_deferred_chain",
+          "action": "ABSTAIN_EVIDENCE_CHAIN",
+          "loss": 12,
+          "missing": [],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 2,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_provenance_gap",
+          "action": "ABSTAIN_PROVENANCE",
+          "loss": 102,
+          "missing": [
+            "chain_no_terminal"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 0,
+          "authority_risk": 0
+        },
+        {
+          "model": "deny_unverifiable_citation",
+          "action": "DENY_CITATION",
+          "loss": 102,
+          "missing": [
+            "citation_unverifiable"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 0,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_context_missing",
+          "action": "ABSTAIN_CONTEXT",
+          "loss": 115,
+          "missing": [
+            "context_material_missing"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 1,
+          "authority_risk": 1
+        }
+      ]
+    },
+    {
+      "scenario_id": "S09",
+      "label": "Pinochet context-missing gesture claim",
+      "expected_action": "ABSTAIN_CONTEXT",
+      "selected_action": "ABSTAIN_CONTEXT",
+      "selected_model": "abstain_context_missing",
+      "selected_loss": 15,
+      "matches_expected": true,
+      "features": [
+        "chain_terminal_process",
+        "citation_verified",
+        "clinician_handoff_missing",
+        "context_material_missing",
+        "design_validation",
+        "endpoint_process",
+        "opportunity_unknown",
+        "population_plausible"
+      ],
+      "top_losses": [
+        {
+          "model": "abstain_context_missing",
+          "action": "ABSTAIN_CONTEXT",
+          "loss": 15,
+          "missing": [],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 1,
+          "authority_risk": 1
+        },
+        {
+          "model": "deny_unverifiable_citation",
+          "action": "DENY_CITATION",
+          "loss": 102,
+          "missing": [
+            "citation_unverifiable"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 0,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_deferred_chain",
+          "action": "ABSTAIN_EVIDENCE_CHAIN",
+          "loss": 112,
+          "missing": [
+            "chain_deferred"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 2,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_opportunity_cost",
+          "action": "ABSTAIN_OPPORTUNITY_COST",
+          "loss": 117,
+          "missing": [
+            "opportunity_unaddressed_high"
+          ],
+          "forbidden_present": [],
+          "complexity": 2,
+          "nested_burden": 1,
+          "authority_risk": 1
+        }
+      ]
+    },
+    {
+      "scenario_id": "S10",
+      "label": "SEIR variant generalization shift",
+      "expected_action": "STRESS_TEST_GENERALIZATION",
+      "selected_action": "STRESS_TEST_GENERALIZATION",
+      "selected_model": "stress_test_temporal_shift",
+      "selected_loss": 17,
+      "matches_expected": true,
+      "features": [
+        "chain_terminal_surrogate",
+        "citation_course_or_local",
+        "context_partial",
+        "design_validation",
+        "endpoint_surrogate",
+        "opportunity_unknown",
+        "population_temporal_shift",
+        "public_health_boundary_needed"
+      ],
+      "top_losses": [
+        {
+          "model": "stress_test_temporal_shift",
+          "action": "STRESS_TEST_GENERALIZATION",
+          "loss": 17,
+          "missing": [],
+          "forbidden_present": [],
+          "complexity": 2,
+          "nested_burden": 1,
+          "authority_risk": 1
+        },
+        {
+          "model": "deny_unverifiable_citation",
+          "action": "DENY_CITATION",
+          "loss": 102,
+          "missing": [
+            "citation_unverifiable"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 0,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_deferred_chain",
+          "action": "ABSTAIN_EVIDENCE_CHAIN",
+          "loss": 112,
+          "missing": [
+            "chain_deferred"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 2,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_context_missing",
+          "action": "ABSTAIN_CONTEXT",
+          "loss": 115,
+          "missing": [
+            "context_material_missing"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 1,
+          "authority_risk": 1
+        }
+      ]
+    },
+    {
+      "scenario_id": "S11",
+      "label": "Consumer genetics feature gap",
+      "expected_action": "ABSTAIN_PROVENANCE",
+      "selected_action": "ABSTAIN_PROVENANCE",
+      "selected_model": "abstain_provenance_gap",
+      "selected_loss": 2,
+      "matches_expected": true,
+      "features": [
+        "chain_no_terminal",
+        "citation_course_or_local",
+        "clinician_authority_retained",
+        "context_missing",
+        "design_case",
+        "endpoint_none",
+        "opportunity_unknown",
+        "population_unknown"
+      ],
+      "top_losses": [
+        {
+          "model": "abstain_provenance_gap",
+          "action": "ABSTAIN_PROVENANCE",
+          "loss": 2,
+          "missing": [],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 0,
+          "authority_risk": 0
+        },
+        {
+          "model": "deny_unverifiable_citation",
+          "action": "DENY_CITATION",
+          "loss": 102,
+          "missing": [
+            "citation_unverifiable"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 0,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_deferred_chain",
+          "action": "ABSTAIN_EVIDENCE_CHAIN",
+          "loss": 112,
+          "missing": [
+            "chain_deferred"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 2,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_context_missing",
+          "action": "ABSTAIN_CONTEXT",
+          "loss": 115,
+          "missing": [
+            "context_material_missing"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 1,
+          "authority_risk": 1
+        }
+      ]
+    },
+    {
+      "scenario_id": "S12",
+      "label": "Validated surrogate with confirmation plan",
+      "expected_action": "NARROW_WITH_CONFIRMATION",
+      "selected_action": "NARROW_WITH_CONFIRMATION",
+      "selected_model": "validated_surrogate_with_confirmation",
+      "selected_loss": 21,
+      "matches_expected": true,
+      "features": [
+        "chain_terminal_surrogate",
+        "citation_verified",
+        "clinician_authority_retained",
+        "context_available",
+        "design_rct",
+        "endpoint_validated_surrogate",
+        "opportunity_addressed",
+        "population_match"
+      ],
+      "top_losses": [
+        {
+          "model": "validated_surrogate_with_confirmation",
+          "action": "NARROW_WITH_CONFIRMATION",
+          "loss": 21,
+          "missing": [],
+          "forbidden_present": [],
+          "complexity": 4,
+          "nested_burden": 1,
+          "authority_risk": 1
+        },
+        {
+          "model": "deny_unverifiable_citation",
+          "action": "DENY_CITATION",
+          "loss": 102,
+          "missing": [
+            "citation_unverifiable"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 0,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_deferred_chain",
+          "action": "ABSTAIN_EVIDENCE_CHAIN",
+          "loss": 112,
+          "missing": [
+            "chain_deferred"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 2,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_context_missing",
+          "action": "ABSTAIN_CONTEXT",
+          "loss": 115,
+          "missing": [
+            "context_material_missing"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 1,
+          "authority_risk": 1
+        }
+      ]
+    },
+    {
+      "scenario_id": "S13",
+      "label": "Kanazawa-style bounded evidence ambiguity",
+      "expected_action": "NARROW_TO_SURROGATE",
+      "selected_action": "NARROW_TO_SURROGATE",
+      "selected_model": "narrow_surrogate_claim",
+      "selected_loss": 19,
+      "matches_expected": true,
+      "features": [
+        "chain_terminal_surrogate",
+        "citation_verified",
+        "clinician_authority_retained",
+        "context_partial",
+        "design_rct",
+        "endpoint_surrogate",
+        "opportunity_unknown",
+        "population_plausible"
+      ],
+      "top_losses": [
+        {
+          "model": "narrow_surrogate_claim",
+          "action": "NARROW_TO_SURROGATE",
+          "loss": 19,
+          "missing": [],
+          "forbidden_present": [],
+          "complexity": 3,
+          "nested_burden": 1,
+          "authority_risk": 1
+        },
+        {
+          "model": "deny_unverifiable_citation",
+          "action": "DENY_CITATION",
+          "loss": 102,
+          "missing": [
+            "citation_unverifiable"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 0,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_deferred_chain",
+          "action": "ABSTAIN_EVIDENCE_CHAIN",
+          "loss": 112,
+          "missing": [
+            "chain_deferred"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 2,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_context_missing",
+          "action": "ABSTAIN_CONTEXT",
+          "loss": 115,
+          "missing": [
+            "context_material_missing"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 1,
+          "authority_risk": 1
+        }
+      ]
+    },
+    {
+      "scenario_id": "S14",
+      "label": "Audio separation/captioning metric overclaim",
+      "expected_action": "NARROW_TO_SURROGATE",
+      "selected_action": "NARROW_TO_SURROGATE",
+      "selected_model": "local_audio_surrogate_claim",
+      "selected_loss": 19,
+      "matches_expected": true,
+      "features": [
+        "chain_terminal_surrogate",
+        "citation_course_or_local",
+        "clinician_authority_retained",
+        "context_partial",
+        "design_validation",
+        "endpoint_surrogate",
+        "opportunity_unknown",
+        "population_plausible"
+      ],
+      "top_losses": [
+        {
+          "model": "local_audio_surrogate_claim",
+          "action": "NARROW_TO_SURROGATE",
+          "loss": 19,
+          "missing": [],
+          "forbidden_present": [],
+          "complexity": 3,
+          "nested_burden": 1,
+          "authority_risk": 1
+        },
+        {
+          "model": "deny_unverifiable_citation",
+          "action": "DENY_CITATION",
+          "loss": 102,
+          "missing": [
+            "citation_unverifiable"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 0,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_deferred_chain",
+          "action": "ABSTAIN_EVIDENCE_CHAIN",
+          "loss": 112,
+          "missing": [
+            "chain_deferred"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 2,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_context_missing",
+          "action": "ABSTAIN_CONTEXT",
+          "loss": 115,
+          "missing": [
+            "context_material_missing"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 1,
+          "authority_risk": 1
+        }
+      ]
+    },
+    {
+      "scenario_id": "S15",
+      "label": "Telemedicine practice simulation",
+      "expected_action": "ALLOW_BOUNDED_TRAINING_SIMULATION",
+      "selected_action": "ALLOW_BOUNDED_TRAINING_SIMULATION",
+      "selected_model": "bounded_telemedicine_training_simulation",
+      "selected_loss": 14,
+      "matches_expected": true,
+      "features": [
+        "chain_terminal_process",
+        "citation_course_or_local",
+        "clinician_authority_retained",
+        "context_simulation_available",
+        "design_case",
+        "endpoint_process",
+        "opportunity_low",
+        "population_match"
+      ],
+      "top_losses": [
+        {
+          "model": "bounded_telemedicine_training_simulation",
+          "action": "ALLOW_BOUNDED_TRAINING_SIMULATION",
+          "loss": 14,
+          "missing": [],
+          "forbidden_present": [],
+          "complexity": 3,
+          "nested_burden": 0,
+          "authority_risk": 1
+        },
+        {
+          "model": "deny_unverifiable_citation",
+          "action": "DENY_CITATION",
+          "loss": 102,
+          "missing": [
+            "citation_unverifiable"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 0,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_deferred_chain",
+          "action": "ABSTAIN_EVIDENCE_CHAIN",
+          "loss": 112,
+          "missing": [
+            "chain_deferred"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 2,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_context_missing",
+          "action": "ABSTAIN_CONTEXT",
+          "loss": 115,
+          "missing": [
+            "context_material_missing"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 1,
+          "authority_risk": 1
+        }
+      ]
+    },
+    {
+      "scenario_id": "S16",
+      "label": "SIK3 hearing/tinnitus tolerance overclaim",
+      "expected_action": "NARROW_TO_SURROGATE",
+      "selected_action": "NARROW_TO_SURROGATE",
+      "selected_model": "observational_mechanism_surrogate_claim",
+      "selected_loss": 19,
+      "matches_expected": true,
+      "features": [
+        "chain_terminal_surrogate",
+        "citation_verified",
+        "clinician_authority_retained",
+        "context_partial",
+        "design_observational",
+        "endpoint_surrogate",
+        "opportunity_unknown",
+        "population_plausible"
+      ],
+      "top_losses": [
+        {
+          "model": "observational_mechanism_surrogate_claim",
+          "action": "NARROW_TO_SURROGATE",
+          "loss": 19,
+          "missing": [],
+          "forbidden_present": [],
+          "complexity": 3,
+          "nested_burden": 1,
+          "authority_risk": 1
+        },
+        {
+          "model": "deny_unverifiable_citation",
+          "action": "DENY_CITATION",
+          "loss": 102,
+          "missing": [
+            "citation_unverifiable"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 0,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_deferred_chain",
+          "action": "ABSTAIN_EVIDENCE_CHAIN",
+          "loss": 112,
+          "missing": [
+            "chain_deferred"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 2,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_context_missing",
+          "action": "ABSTAIN_CONTEXT",
+          "loss": 115,
+          "missing": [
+            "context_material_missing"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 1,
+          "authority_risk": 1
+        }
+      ]
+    },
+    {
+      "scenario_id": "S17",
+      "label": "Altitude/circadian auditory transport overclaim",
+      "expected_action": "STRESS_TEST_GENERALIZATION",
+      "selected_action": "STRESS_TEST_GENERALIZATION",
+      "selected_model": "stress_test_temporal_shift",
+      "selected_loss": 17,
+      "matches_expected": true,
+      "features": [
+        "chain_terminal_surrogate",
+        "citation_verified",
+        "clinician_authority_retained",
+        "context_partial",
+        "design_validation",
+        "endpoint_surrogate",
+        "opportunity_unknown",
+        "population_temporal_shift"
+      ],
+      "top_losses": [
+        {
+          "model": "stress_test_temporal_shift",
+          "action": "STRESS_TEST_GENERALIZATION",
+          "loss": 17,
+          "missing": [],
+          "forbidden_present": [],
+          "complexity": 2,
+          "nested_burden": 1,
+          "authority_risk": 1
+        },
+        {
+          "model": "deny_unverifiable_citation",
+          "action": "DENY_CITATION",
+          "loss": 102,
+          "missing": [
+            "citation_unverifiable"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 0,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_deferred_chain",
+          "action": "ABSTAIN_EVIDENCE_CHAIN",
+          "loss": 112,
+          "missing": [
+            "chain_deferred"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 2,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_context_missing",
+          "action": "ABSTAIN_CONTEXT",
+          "loss": 115,
+          "missing": [
+            "context_material_missing"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 1,
+          "authority_risk": 1
+        }
+      ]
+    },
+    {
+      "scenario_id": "S18",
+      "label": "Robotic cadaver/synthetic patient rehearsal",
+      "expected_action": "ALLOW_BOUNDED_TRAINING_SIMULATION",
+      "selected_action": "ALLOW_BOUNDED_TRAINING_SIMULATION",
+      "selected_model": "bounded_telemedicine_training_simulation",
+      "selected_loss": 14,
+      "matches_expected": true,
+      "features": [
+        "chain_terminal_process",
+        "citation_course_or_local",
+        "clinician_authority_retained",
+        "context_simulation_available",
+        "design_case",
+        "endpoint_process",
+        "opportunity_low",
+        "population_match"
+      ],
+      "top_losses": [
+        {
+          "model": "bounded_telemedicine_training_simulation",
+          "action": "ALLOW_BOUNDED_TRAINING_SIMULATION",
+          "loss": 14,
+          "missing": [],
+          "forbidden_present": [],
+          "complexity": 3,
+          "nested_burden": 0,
+          "authority_risk": 1
+        },
+        {
+          "model": "deny_unverifiable_citation",
+          "action": "DENY_CITATION",
+          "loss": 102,
+          "missing": [
+            "citation_unverifiable"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 0,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_deferred_chain",
+          "action": "ABSTAIN_EVIDENCE_CHAIN",
+          "loss": 112,
+          "missing": [
+            "chain_deferred"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 2,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_context_missing",
+          "action": "ABSTAIN_CONTEXT",
+          "loss": 115,
+          "missing": [
+            "context_material_missing"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 1,
+          "authority_risk": 1
+        }
+      ]
+    },
+    {
+      "scenario_id": "S19",
+      "label": "Reverse-Flynn neuropsych norm drift",
+      "expected_action": "STRESS_TEST_GENERALIZATION",
+      "selected_action": "STRESS_TEST_GENERALIZATION",
+      "selected_model": "stress_test_temporal_shift",
+      "selected_loss": 17,
+      "matches_expected": true,
+      "features": [
+        "chain_terminal_surrogate",
+        "citation_verified",
+        "clinician_authority_retained",
+        "context_partial",
+        "design_observational",
+        "endpoint_surrogate",
+        "opportunity_unknown",
+        "population_temporal_shift"
+      ],
+      "top_losses": [
+        {
+          "model": "stress_test_temporal_shift",
+          "action": "STRESS_TEST_GENERALIZATION",
+          "loss": 17,
+          "missing": [],
+          "forbidden_present": [],
+          "complexity": 2,
+          "nested_burden": 1,
+          "authority_risk": 1
+        },
+        {
+          "model": "deny_unverifiable_citation",
+          "action": "DENY_CITATION",
+          "loss": 102,
+          "missing": [
+            "citation_unverifiable"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 0,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_deferred_chain",
+          "action": "ABSTAIN_EVIDENCE_CHAIN",
+          "loss": 112,
+          "missing": [
+            "chain_deferred"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 2,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_context_missing",
+          "action": "ABSTAIN_CONTEXT",
+          "loss": 115,
+          "missing": [
+            "context_material_missing"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 1,
+          "authority_risk": 1
+        }
+      ]
+    },
+    {
+      "scenario_id": "S20",
+      "label": "Quasiperiodic evidence-patch collapse",
+      "expected_action": "ABSTAIN_TRANSPORT",
+      "selected_action": "ABSTAIN_TRANSPORT",
+      "selected_model": "abstain_transport_gap",
+      "selected_loss": 17,
+      "matches_expected": true,
+      "features": [
+        "chain_terminal_process",
+        "citation_verified",
+        "clinician_authority_retained",
+        "context_partial",
+        "design_observational",
+        "endpoint_process",
+        "opportunity_unknown",
+        "population_mismatch"
+      ],
+      "top_losses": [
+        {
+          "model": "abstain_transport_gap",
+          "action": "ABSTAIN_TRANSPORT",
+          "loss": 17,
+          "missing": [],
+          "forbidden_present": [],
+          "complexity": 2,
+          "nested_burden": 1,
+          "authority_risk": 1
+        },
+        {
+          "model": "deny_unverifiable_citation",
+          "action": "DENY_CITATION",
+          "loss": 102,
+          "missing": [
+            "citation_unverifiable"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 0,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_deferred_chain",
+          "action": "ABSTAIN_EVIDENCE_CHAIN",
+          "loss": 112,
+          "missing": [
+            "chain_deferred"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 2,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_context_missing",
+          "action": "ABSTAIN_CONTEXT",
+          "loss": 115,
+          "missing": [
+            "context_material_missing"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 1,
+          "authority_risk": 1
+        }
+      ]
+    },
+    {
+      "scenario_id": "S21",
+      "label": "Cross-script transcript provenance gap",
+      "expected_action": "ABSTAIN_PROVENANCE",
+      "selected_action": "ABSTAIN_PROVENANCE",
+      "selected_model": "abstain_provenance_gap",
+      "selected_loss": 2,
+      "matches_expected": true,
+      "features": [
+        "chain_no_terminal",
+        "citation_course_or_local",
+        "clinician_authority_retained",
+        "context_missing",
+        "design_case",
+        "endpoint_none",
+        "opportunity_unknown",
+        "population_unknown"
+      ],
+      "top_losses": [
+        {
+          "model": "abstain_provenance_gap",
+          "action": "ABSTAIN_PROVENANCE",
+          "loss": 2,
+          "missing": [],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 0,
+          "authority_risk": 0
+        },
+        {
+          "model": "deny_unverifiable_citation",
+          "action": "DENY_CITATION",
+          "loss": 102,
+          "missing": [
+            "citation_unverifiable"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 0,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_deferred_chain",
+          "action": "ABSTAIN_EVIDENCE_CHAIN",
+          "loss": 112,
+          "missing": [
+            "chain_deferred"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 2,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_context_missing",
+          "action": "ABSTAIN_CONTEXT",
+          "loss": 115,
+          "missing": [
+            "context_material_missing"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 1,
+          "authority_risk": 1
+        }
+      ]
+    },
+    {
+      "scenario_id": "S22",
+      "label": "Saliva evolutionary-genomics clinical overclaim",
+      "expected_action": "NARROW_TO_SURROGATE",
+      "selected_action": "NARROW_TO_SURROGATE",
+      "selected_model": "observational_mechanism_surrogate_claim",
+      "selected_loss": 19,
+      "matches_expected": true,
+      "features": [
+        "chain_terminal_surrogate",
+        "citation_verified",
+        "clinician_authority_retained",
+        "context_partial",
+        "design_observational",
+        "endpoint_surrogate",
+        "opportunity_unknown",
+        "population_plausible"
+      ],
+      "top_losses": [
+        {
+          "model": "observational_mechanism_surrogate_claim",
+          "action": "NARROW_TO_SURROGATE",
+          "loss": 19,
+          "missing": [],
+          "forbidden_present": [],
+          "complexity": 3,
+          "nested_burden": 1,
+          "authority_risk": 1
+        },
+        {
+          "model": "deny_unverifiable_citation",
+          "action": "DENY_CITATION",
+          "loss": 102,
+          "missing": [
+            "citation_unverifiable"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 0,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_deferred_chain",
+          "action": "ABSTAIN_EVIDENCE_CHAIN",
+          "loss": 112,
+          "missing": [
+            "chain_deferred"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 2,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_context_missing",
+          "action": "ABSTAIN_CONTEXT",
+          "loss": 115,
+          "missing": [
+            "context_material_missing"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 1,
+          "authority_risk": 1
+        }
+      ]
+    },
+    {
+      "scenario_id": "S23",
+      "label": "Sequential depletion runtime-budget ordering",
+      "expected_action": "STRESS_TEST_ORDERING",
+      "selected_action": "STRESS_TEST_ORDERING",
+      "selected_model": "runtime_budget_ordering_stress_test",
+      "selected_loss": 24,
+      "matches_expected": true,
+      "features": [
+        "chain_terminal_process",
+        "citation_course_or_local",
+        "clinician_authority_retained",
+        "context_simulation_available",
+        "design_case",
+        "endpoint_process",
+        "opportunity_unaddressed_high",
+        "population_match"
+      ],
+      "top_losses": [
+        {
+          "model": "runtime_budget_ordering_stress_test",
+          "action": "STRESS_TEST_ORDERING",
+          "loss": 24,
+          "missing": [],
+          "forbidden_present": [],
+          "complexity": 3,
+          "nested_burden": 2,
+          "authority_risk": 1
+        },
+        {
+          "model": "deny_unverifiable_citation",
+          "action": "DENY_CITATION",
+          "loss": 102,
+          "missing": [
+            "citation_unverifiable"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 0,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_deferred_chain",
+          "action": "ABSTAIN_EVIDENCE_CHAIN",
+          "loss": 112,
+          "missing": [
+            "chain_deferred"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 2,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_context_missing",
+          "action": "ABSTAIN_CONTEXT",
+          "loss": 115,
+          "missing": [
+            "context_material_missing"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 1,
+          "authority_risk": 1
+        }
+      ]
+    },
+    {
+      "scenario_id": "S24",
+      "label": "Consumer heart-rate wearable overclaim",
+      "expected_action": "NARROW_TO_SURROGATE",
+      "selected_action": "NARROW_TO_SURROGATE",
+      "selected_model": "observational_mechanism_surrogate_claim",
+      "selected_loss": 19,
+      "matches_expected": true,
+      "features": [
+        "chain_terminal_surrogate",
+        "citation_verified",
+        "clinician_authority_retained",
+        "context_partial",
+        "design_observational",
+        "endpoint_surrogate",
+        "opportunity_unknown",
+        "population_plausible"
+      ],
+      "top_losses": [
+        {
+          "model": "observational_mechanism_surrogate_claim",
+          "action": "NARROW_TO_SURROGATE",
+          "loss": 19,
+          "missing": [],
+          "forbidden_present": [],
+          "complexity": 3,
+          "nested_burden": 1,
+          "authority_risk": 1
+        },
+        {
+          "model": "deny_unverifiable_citation",
+          "action": "DENY_CITATION",
+          "loss": 102,
+          "missing": [
+            "citation_unverifiable"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 0,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_deferred_chain",
+          "action": "ABSTAIN_EVIDENCE_CHAIN",
+          "loss": 112,
+          "missing": [
+            "chain_deferred"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 2,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_context_missing",
+          "action": "ABSTAIN_CONTEXT",
+          "loss": 115,
+          "missing": [
+            "context_material_missing"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 1,
+          "authority_risk": 1
+        }
+      ]
+    },
+    {
+      "scenario_id": "S25",
+      "label": "Orthogonal nuisance component confounding",
+      "expected_action": "STRESS_TEST_CONFOUNDING",
+      "selected_action": "STRESS_TEST_CONFOUNDING",
+      "selected_model": "orthogonal_projection_confounding_stress_test",
+      "selected_loss": 24,
+      "matches_expected": true,
+      "features": [
+        "chain_terminal_process",
+        "citation_course_or_local",
+        "clinician_authority_retained",
+        "context_simulation_available",
+        "design_case",
+        "endpoint_process",
+        "opportunity_unknown",
+        "population_match"
+      ],
+      "top_losses": [
+        {
+          "model": "orthogonal_projection_confounding_stress_test",
+          "action": "STRESS_TEST_CONFOUNDING",
+          "loss": 24,
+          "missing": [],
+          "forbidden_present": [],
+          "complexity": 3,
+          "nested_burden": 2,
+          "authority_risk": 1
+        },
+        {
+          "model": "deny_unverifiable_citation",
+          "action": "DENY_CITATION",
+          "loss": 102,
+          "missing": [
+            "citation_unverifiable"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 0,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_deferred_chain",
+          "action": "ABSTAIN_EVIDENCE_CHAIN",
+          "loss": 112,
+          "missing": [
+            "chain_deferred"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 2,
+          "authority_risk": 0
+        },
+        {
+          "model": "bounded_telemedicine_training_simulation",
+          "action": "ALLOW_BOUNDED_TRAINING_SIMULATION",
+          "loss": 114,
+          "missing": [
+            "opportunity_low"
+          ],
+          "forbidden_present": [],
+          "complexity": 3,
+          "nested_burden": 0,
+          "authority_risk": 1
+        }
+      ]
+    },
+    {
+      "scenario_id": "S26",
+      "label": "Family genomic consent aggregation",
+      "expected_action": "PRESERVE_CONSENT_BOUNDARY",
+      "selected_action": "PRESERVE_CONSENT_BOUNDARY",
+      "selected_model": "family_consent_boundary_audit",
+      "selected_loss": 24,
+      "matches_expected": true,
+      "features": [
+        "chain_terminal_process",
+        "citation_course_or_local",
+        "clinician_authority_retained",
+        "context_simulation_available",
+        "design_case",
+        "endpoint_process",
+        "opportunity_unknown",
+        "population_unknown"
+      ],
+      "top_losses": [
+        {
+          "model": "family_consent_boundary_audit",
+          "action": "PRESERVE_CONSENT_BOUNDARY",
+          "loss": 24,
+          "missing": [],
+          "forbidden_present": [],
+          "complexity": 3,
+          "nested_burden": 2,
+          "authority_risk": 1
+        },
+        {
+          "model": "deny_unverifiable_citation",
+          "action": "DENY_CITATION",
+          "loss": 102,
+          "missing": [
+            "citation_unverifiable"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 0,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_deferred_chain",
+          "action": "ABSTAIN_EVIDENCE_CHAIN",
+          "loss": 112,
+          "missing": [
+            "chain_deferred"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 2,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_context_missing",
+          "action": "ABSTAIN_CONTEXT",
+          "loss": 115,
+          "missing": [
+            "context_material_missing"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 1,
+          "authority_risk": 1
+        }
+      ]
+    },
+    {
+      "scenario_id": "S27",
+      "label": "Recurring hospital genetics result triage",
+      "expected_action": "NARROW_TO_SURROGATE",
+      "selected_action": "NARROW_TO_SURROGATE",
+      "selected_model": "hospital_genetics_triage_support",
+      "selected_loss": 19,
+      "matches_expected": true,
+      "features": [
+        "chain_terminal_process",
+        "citation_verified",
+        "clinician_authority_retained",
+        "context_partial",
+        "design_validation",
+        "endpoint_process",
+        "opportunity_addressed",
+        "population_plausible"
+      ],
+      "top_losses": [
+        {
+          "model": "hospital_genetics_triage_support",
+          "action": "NARROW_TO_SURROGATE",
+          "loss": 19,
+          "missing": [],
+          "forbidden_present": [],
+          "complexity": 3,
+          "nested_burden": 1,
+          "authority_risk": 1
+        },
+        {
+          "model": "deny_unverifiable_citation",
+          "action": "DENY_CITATION",
+          "loss": 102,
+          "missing": [
+            "citation_unverifiable"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 0,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_deferred_chain",
+          "action": "ABSTAIN_EVIDENCE_CHAIN",
+          "loss": 112,
+          "missing": [
+            "chain_deferred"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 2,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_context_missing",
+          "action": "ABSTAIN_CONTEXT",
+          "loss": 115,
+          "missing": [
+            "context_material_missing"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 1,
+          "authority_risk": 1
+        }
+      ]
+    },
+    {
+      "scenario_id": "S28",
+      "label": "Speculative topological theory provenance boundary",
+      "expected_action": "ABSTAIN_PROVENANCE",
+      "selected_action": "ABSTAIN_PROVENANCE",
+      "selected_model": "abstain_provenance_gap",
+      "selected_loss": 2,
+      "matches_expected": true,
+      "features": [
+        "chain_no_terminal",
+        "citation_verified",
+        "clinician_authority_retained",
+        "context_missing",
+        "design_unverifiable",
+        "endpoint_none",
+        "opportunity_unknown",
+        "population_unknown"
+      ],
+      "top_losses": [
+        {
+          "model": "abstain_provenance_gap",
+          "action": "ABSTAIN_PROVENANCE",
+          "loss": 2,
+          "missing": [],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 0,
+          "authority_risk": 0
+        },
+        {
+          "model": "deny_unverifiable_citation",
+          "action": "DENY_CITATION",
+          "loss": 102,
+          "missing": [
+            "citation_unverifiable"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 0,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_deferred_chain",
+          "action": "ABSTAIN_EVIDENCE_CHAIN",
+          "loss": 112,
+          "missing": [
+            "chain_deferred"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 2,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_context_missing",
+          "action": "ABSTAIN_CONTEXT",
+          "loss": 115,
+          "missing": [
+            "context_material_missing"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 1,
+          "authority_risk": 1
+        }
+      ]
+    },
+    {
+      "scenario_id": "S29",
+      "label": "KAN architecture claim model-selection boundary",
+      "expected_action": "NARROW_TO_SURROGATE",
+      "selected_action": "NARROW_TO_SURROGATE",
+      "selected_model": "observational_mechanism_surrogate_claim",
+      "selected_loss": 19,
+      "matches_expected": true,
+      "features": [
+        "chain_terminal_surrogate",
+        "citation_verified",
+        "clinician_authority_retained",
+        "context_partial",
+        "design_observational",
+        "endpoint_surrogate",
+        "opportunity_unknown",
+        "population_plausible"
+      ],
+      "top_losses": [
+        {
+          "model": "observational_mechanism_surrogate_claim",
+          "action": "NARROW_TO_SURROGATE",
+          "loss": 19,
+          "missing": [],
+          "forbidden_present": [],
+          "complexity": 3,
+          "nested_burden": 1,
+          "authority_risk": 1
+        },
+        {
+          "model": "deny_unverifiable_citation",
+          "action": "DENY_CITATION",
+          "loss": 102,
+          "missing": [
+            "citation_unverifiable"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 0,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_deferred_chain",
+          "action": "ABSTAIN_EVIDENCE_CHAIN",
+          "loss": 112,
+          "missing": [
+            "chain_deferred"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 2,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_context_missing",
+          "action": "ABSTAIN_CONTEXT",
+          "loss": 115,
+          "missing": [
+            "context_material_missing"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 1,
+          "authority_risk": 1
+        }
+      ]
+    },
+    {
+      "scenario_id": "S30",
+      "label": "Picture-language multimodal simulation boundary",
+      "expected_action": "ABSTAIN_PROVENANCE",
+      "selected_action": "ABSTAIN_PROVENANCE",
+      "selected_model": "abstain_provenance_gap",
+      "selected_loss": 2,
+      "matches_expected": true,
+      "features": [
+        "chain_no_terminal",
+        "citation_verified",
+        "clinician_authority_retained",
+        "context_missing",
+        "design_unverifiable",
+        "endpoint_none",
+        "opportunity_unknown",
+        "population_unknown"
+      ],
+      "top_losses": [
+        {
+          "model": "abstain_provenance_gap",
+          "action": "ABSTAIN_PROVENANCE",
+          "loss": 2,
+          "missing": [],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 0,
+          "authority_risk": 0
+        },
+        {
+          "model": "deny_unverifiable_citation",
+          "action": "DENY_CITATION",
+          "loss": 102,
+          "missing": [
+            "citation_unverifiable"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 0,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_deferred_chain",
+          "action": "ABSTAIN_EVIDENCE_CHAIN",
+          "loss": 112,
+          "missing": [
+            "chain_deferred"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 2,
+          "authority_risk": 0
+        },
+        {
+          "model": "abstain_context_missing",
+          "action": "ABSTAIN_CONTEXT",
+          "loss": 115,
+          "missing": [
+            "context_material_missing"
+          ],
+          "forbidden_present": [],
+          "complexity": 1,
+          "nested_burden": 1,
+          "authority_risk": 1
+        }
+      ]
+    }
+  ]
+}

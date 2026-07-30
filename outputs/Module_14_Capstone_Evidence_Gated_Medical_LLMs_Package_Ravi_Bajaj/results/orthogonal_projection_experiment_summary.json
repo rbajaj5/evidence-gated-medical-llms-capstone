@@ -1,0 +1,12 @@
+{
+  "sample_count": 48,
+  "design_columns": 2,
+  "alpha_norm_before_projection": 6.484778893985808,
+  "projected_component_norm": 6.268000840559122,
+  "alpha_norm_after_projection": 1.6626854081978153,
+  "max_abs_design_inner_product_before": 38.37812880712477,
+  "max_abs_design_inner_product_after": 4.676814491233472e-15,
+  "orthogonality_passed": true,
+  "projection_removed_design_signal": true,
+  "runtime_interpretation": "A latent or residual model component should not be interpreted as independent clinical signal until its projection onto known design covariates has been removed or audited."
+}

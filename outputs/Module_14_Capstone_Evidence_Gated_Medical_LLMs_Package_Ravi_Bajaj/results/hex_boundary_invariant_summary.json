@@ -1,0 +1,64 @@
+{
+  "experiment": "hex_boundary_invariant_probe",
+  "clinical_status": "synthetic mathematical analogy only",
+  "board_sizes_enumerated": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "total_full_boards_enumerated": 66066,
+  "both_crossing_count": 0,
+  "neither_crossing_count": 0,
+  "exactly_one_crossing_all_full_boards": true,
+  "first_player_win_sizes_checked": [
+    1,
+    2,
+    3
+  ],
+  "first_player_wins_all_checked": true,
+  "enumeration_by_size": {
+    "1": {
+      "total_full_boards": 2,
+      "blue_only": 1,
+      "yellow_only": 1,
+      "both": 0,
+      "neither": 0
+    },
+    "2": {
+      "total_full_boards": 16,
+      "blue_only": 8,
+      "yellow_only": 8,
+      "both": 0,
+      "neither": 0
+    },
+    "3": {
+      "total_full_boards": 512,
+      "blue_only": 256,
+      "yellow_only": 256,
+      "both": 0,
+      "neither": 0
+    },
+    "4": {
+      "total_full_boards": 65536,
+      "blue_only": 32768,
+      "yellow_only": 32768,
+      "both": 0,
+      "neither": 0
+    }
+  },
+  "minimax_by_size": {
+    "1": true,
+    "2": true,
+    "3": true
+  },
+  "majority_triangle_summary": {
+    "patterns": 8,
+    "tie_count": 0,
+    "blue_majority_patterns": 4,
+    "yellow_majority_patterns": 4,
+    "odd_local_aggregation": true
+  },
+  "runtime_interpretation": "Terminal runtime states should be designed to avoid both/none safety classifications; hidden extra moves favor the acting agent and should be logged.",
+  "coarse_graining_interpretation": "The Y-game majority-triangle reduction is a model for safe coarse-graining: local blurring is acceptable only when it preserves the global boundary property being audited."
+}

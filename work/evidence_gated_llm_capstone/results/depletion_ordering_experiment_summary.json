@@ -1,0 +1,67 @@
+{
+  "source_pdf": "C:/Users/anaxe/Downloads/sequential_depletion_ordering.pdf",
+  "loads": [
+    1.0,
+    2.0,
+    5.0,
+    8.0
+  ],
+  "reserve": 3.0,
+  "permutation_count": 24,
+  "increasing_order": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "decreasing_order": [
+    3,
+    2,
+    1,
+    0
+  ],
+  "best_raw_order": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "worst_raw_order": [
+    3,
+    2,
+    1,
+    0
+  ],
+  "best_raw_cost": 1.2035154173312068,
+  "worst_raw_cost": 1.4589314194577352,
+  "increasing_minimizes_raw_cost": true,
+  "decreasing_maximizes_raw_cost": true,
+  "best_convex_log_order": [
+    3,
+    2,
+    1,
+    0
+  ],
+  "worst_convex_log_order": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "best_convex_log_risk": 0.9132735640436962,
+  "worst_convex_log_risk": 1.8453275618090605,
+  "decreasing_minimizes_convex_log_risk": true,
+  "increasing_maximizes_convex_log_risk": true,
+  "multi_resource_pair_a": [
+    4.0,
+    1.0
+  ],
+  "multi_resource_pair_b": [
+    1.0,
+    3.0
+  ],
+  "low_tail_delta_cost_a_then_b_minus_b_then_a": 0.05000000000000002,
+  "mixed_tail_delta_cost_a_then_b_minus_b_then_a": -0.1448051948051948,
+  "context_reversal_observed": true,
+  "runtime_interpretation": "FIFO is useful for audit replay, but runtime budget decisions should be priority- and state-aware when clinician attention, audit time, compute, and provenance checks are depleted sequentially."
+}

@@ -1,0 +1,189 @@
+{
+  "experiment": "branch_factor_path_stability_probe",
+  "clinical_status": "synthetic mathematical analogy only",
+  "source": "Bourgade-Huang branch factors, radial block system, Volterra contraction, and BBGKY contact/collision warning",
+  "case_count": 2,
+  "stable_branch_passes": true,
+  "near_collision_branch_passes": false,
+  "stable_r0": 36.05551275463989,
+  "near_collision_r0": 0.07810249675906641,
+  "stable_min_separation_ratio": 0.44967554448055475,
+  "stable_min_scaled_phase_margin": 0.4793525720104242,
+  "stable_volterra_contraction_ratio": 0.04157047579076894,
+  "near_collision_separation_passes": false,
+  "hard_outcome_permission_count": 0,
+  "permission": "BRANCH_STABILITY_AUDIT_ONLY",
+  "bbgky_collision_interpretation": "Pointwise identities away from collision diagonals do not authorize contact or near-collision claims. Family-linked genomic overlap and clustered source populations should therefore trigger distributional or transport audit.",
+  "csv": "results\\branch_factor_path_stability.csv",
+  "figure": "figures\\branch_factor_path_stability.png",
+  "rows": [
+    {
+      "name": "separated_multimodal_branch",
+      "z": [
+        [
+          30.0,
+          20.0
+        ],
+        [
+          66.0,
+          -22.0
+        ],
+        [
+          -42.0,
+          31.0
+        ],
+        [
+          15.0,
+          -58.0
+        ]
+      ],
+      "sigma": [
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "delta": 0.4,
+      "min_runtime_separation": 12.0,
+      "contraction_constant": 6.0,
+      "interpretation": "A well-separated branch can be followed as an audit artifact without crossing the branch cut.",
+      "r0": 36.05551275463989,
+      "admissible_sector": true,
+      "separation_passes": true,
+      "path_samples": [
+        {
+          "lambda": 36.05551275463989,
+          "separation": 36.05551275463989,
+          "separation_over_lambda": 1.0
+        },
+        {
+          "lambda": 54.08326913195984,
+          "separation": 24.31992349420242,
+          "separation_over_lambda": 0.44967554448055475
+        },
+        {
+          "lambda": 90.13878188659973,
+          "separation": 83.51272978589299,
+          "separation_over_lambda": 0.9264905519907876
+        },
+        {
+          "lambda": 144.22205101855957,
+          "separation": 189.86508913589975,
+          "separation_over_lambda": 1.3164775275000526
+        }
+      ],
+      "min_sampled_separation_ratio": 0.44967554448055475,
+      "half_plane_preserved": true,
+      "phase_gap_positive": true,
+      "min_scaled_phase_margin": 0.4793525720104242,
+      "zeta0": 144.33320489760544,
+      "volterra_contraction_ratio": 0.04157047579076894,
+      "volterra_contractive": true,
+      "branch_path_passes": true,
+      "omegas": [
+        [
+          -1.9900083305560516,
+          0.1996668332936563
+        ],
+        [
+          2674.5722845534488,
+          -268.3523331395046
+        ],
+        [
+          -3594626.61309697,
+          360665.6824947182
+        ],
+        [
+          4831180133.814316,
+          -484734874.51200247
+        ]
+      ],
+      "runtime_action": "ALLOW_BRANCH_AUDIT_ARTIFACT",
+      "hard_outcome_permission": false
+    },
+    {
+      "name": "near_collision_family_population_branch",
+      "z": [
+        [
+          1.0,
+          0.03
+        ],
+        [
+          1.06,
+          -0.04
+        ],
+        [
+          1.12,
+          0.02
+        ],
+        [
+          1.18,
+          -0.03
+        ]
+      ],
+      "sigma": [
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "delta": 0.4,
+      "min_runtime_separation": 12.0,
+      "contraction_constant": 6.0,
+      "interpretation": "Near-collision/source-overlap case fails separation and contraction checks; it remains branch/transport audit only.",
+      "r0": 0.07810249675906641,
+      "admissible_sector": true,
+      "separation_passes": false,
+      "path_samples": [
+        {
+          "lambda": 0.07810249675906641,
+          "separation": 0.07810249675906641,
+          "separation_over_lambda": 1.0
+        },
+        {
+          "lambda": 0.11715374513859962,
+          "separation": 0.9230618696264282,
+          "separation_over_lambda": 7.879064118132911
+        },
+        {
+          "lambda": 0.19525624189766605,
+          "separation": 0.7687194842559354,
+          "separation_over_lambda": 3.936977772310203
+        },
+        {
+          "lambda": 0.31240998703626566,
+          "separation": 0.5392210038095901,
+          "separation_over_lambda": 1.7260043730516064
+        }
+      ],
+      "min_sampled_separation_ratio": 1.0,
+      "half_plane_preserved": true,
+      "phase_gap_positive": true,
+      "min_scaled_phase_margin": 2.6264782729487037,
+      "zeta0": 0.014551444834415027,
+      "volterra_contraction_ratio": 412.33018908264324,
+      "volterra_contractive": false,
+      "branch_path_passes": false,
+      "omegas": [
+        [
+          -1.9900083305560516,
+          0.1996668332936563
+        ],
+        [
+          2674.5722845534488,
+          -268.3523331395046
+        ],
+        [
+          -3594626.61309697,
+          360665.6824947182
+        ],
+        [
+          4831180133.814316,
+          -484734874.51200247
+        ]
+      ],
+      "runtime_action": "ABSTAIN_BRANCH_STABILITY",
+      "hard_outcome_permission": false
+    }
+  ]
+}

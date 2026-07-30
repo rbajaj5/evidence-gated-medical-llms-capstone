@@ -1,0 +1,3 @@
+name,final_error,budget,passes_budget,exponential_upper,runtime_action
+stable_multimodal_transfer,0.01730185,0.05,True,0.01964947,ALLOW_AUDIT_ARTIFACT
+unstable_missing_provenance_transfer,0.17923640,0.05,False,0.33143745,ABSTAIN_STABILITY

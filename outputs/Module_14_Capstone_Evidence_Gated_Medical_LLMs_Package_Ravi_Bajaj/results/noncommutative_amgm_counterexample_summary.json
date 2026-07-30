@@ -1,0 +1,37 @@
+{
+  "experiment": "noncommutative_amgm_counterexample",
+  "clinical_status": "mathematical analogy only",
+  "purpose": "Exact adversarial stress test showing why simulation-supported conjectures still need counterexample search.",
+  "dimension": 2,
+  "rank_one_projectors": true,
+  "dimension_one_scalar_case_satisfies_bound": true,
+  "original_left_matrix": [
+    [
+      "-1/2",
+      "-1/4"
+    ],
+    [
+      "-1/4",
+      "0"
+    ]
+  ],
+  "original_rhs": "1/4",
+  "original_lhs_exact": "(1 + sqrt(2)) / 4",
+  "violation_factor_exact": "1 + sqrt(2)",
+  "violation_factor_float": 2.414213562373095,
+  "positive_definite_epsilon": "1/10",
+  "positive_definite_left_matrix": [
+    [
+      "-627/1250",
+      "-3/10"
+    ],
+    [
+      "-3/10",
+      "123/1250"
+    ]
+  ],
+  "positive_definite_rhs": "324/625",
+  "positive_definite_lhs_exact": "126/625 + 3*sqrt(2)/10",
+  "positive_definite_margin_exact": "3*sqrt(2)/10 - 198/625",
+  "positive_definite_margin_float": 0.10746406871192854
+}

@@ -1,0 +1,139 @@
+{
+  "experiment": "proof_status_poset_probe",
+  "clinical_status": "synthetic methodological audit only",
+  "dimension_names": [
+    "source_status",
+    "validation_status",
+    "domain_relevance",
+    "endpoint_status",
+    "transport_context",
+    "authority_boundary"
+  ],
+  "states_enumerated": 4096,
+  "cover_transitions_enumerated": 18432,
+  "permission_counts": {
+    "deny_no_source": 1024,
+    "proof_status_or_provenance_audit_only": 1776,
+    "surrogate_or_method_claim_only": 1232,
+    "validated_surrogate_or_guideline_support_only": 60,
+    "hard_outcome_allowed_with_caveats": 4
+  },
+  "nonclinical_hard_state_count": 0,
+  "endpoint_free_promotion_count": 0,
+  "method_only_hard_state_count": 0,
+  "niettu_permission": "proof_status_or_provenance_audit_only",
+  "niettu_source_proof_upgrade_permissions": [
+    "proof_status_or_provenance_audit_only"
+  ],
+  "artifact_rows": [
+    {
+      "name": "NIETTU topological theory record",
+      "rank": "5",
+      "permission": "proof_status_or_provenance_audit_only",
+      "expected_permission": "proof_status_or_provenance_audit_only",
+      "matches_expected": "True",
+      "interpretation": "Real archived/forthcoming source object; not medical validation.",
+      "source_status": "archived_or_indexed",
+      "validation_status": "hypothesis_or_conjecture",
+      "domain_relevance": "methodological_analogy",
+      "endpoint_status": "none",
+      "transport_context": "unknown",
+      "authority_boundary": "audit_only"
+    },
+    {
+      "name": "Karlin-Peres Hex/Y theorem",
+      "rank": "8",
+      "permission": "proof_status_or_provenance_audit_only",
+      "expected_permission": "proof_status_or_provenance_audit_only",
+      "matches_expected": "True",
+      "interpretation": "Formal mathematical analogy for boundary invariants; not clinical evidence.",
+      "source_status": "peer_reviewed_or_guideline",
+      "validation_status": "formal_or_internal_validation",
+      "domain_relevance": "methodological_analogy",
+      "endpoint_status": "none",
+      "transport_context": "source_only",
+      "authority_boundary": "audit_only"
+    },
+    {
+      "name": "Byrne-style pragmatic patient-outcome RCT",
+      "rank": "17",
+      "permission": "hard_outcome_allowed_with_caveats",
+      "expected_permission": "hard_outcome_allowed_with_caveats",
+      "matches_expected": "True",
+      "interpretation": "Clinical permission only when source, endpoint, design, context, and authority all align.",
+      "source_status": "peer_reviewed_or_guideline",
+      "validation_status": "clinical_validation",
+      "domain_relevance": "clinical_workflow",
+      "endpoint_status": "hard_patient_outcome",
+      "transport_context": "target_context_matched",
+      "authority_boundary": "clinician_retained"
+    },
+    {
+      "name": "Hospital genetics guideline support",
+      "rank": "15",
+      "permission": "validated_surrogate_or_guideline_support_only",
+      "expected_permission": "validated_surrogate_or_guideline_support_only",
+      "matches_expected": "True",
+      "interpretation": "Guideline-backed genetics support can route/triage but is not automatically a patient-outcome claim.",
+      "source_status": "peer_reviewed_or_guideline",
+      "validation_status": "formal_or_internal_validation",
+      "domain_relevance": "clinical_workflow",
+      "endpoint_status": "validated_surrogate",
+      "transport_context": "plausible_transfer",
+      "authority_boundary": "clinician_retained_with_governance"
+    },
+    {
+      "name": "Synthetic audio/captioning benchmark",
+      "rank": "7",
+      "permission": "surrogate_or_method_claim_only",
+      "expected_permission": "surrogate_or_method_claim_only",
+      "matches_expected": "True",
+      "interpretation": "Technical metric can support a method claim only.",
+      "source_status": "artifact_exists",
+      "validation_status": "formal_or_internal_validation",
+      "domain_relevance": "methodological_analogy",
+      "endpoint_status": "technical_or_surrogate",
+      "transport_context": "source_only",
+      "authority_boundary": "audit_only"
+    },
+    {
+      "name": "KAN architecture critical assessment",
+      "rank": "8",
+      "permission": "surrogate_or_method_claim_only",
+      "expected_permission": "surrogate_or_method_claim_only",
+      "matches_expected": "True",
+      "interpretation": "Architecture benchmark evidence can support model-selection discipline only.",
+      "source_status": "archived_or_indexed",
+      "validation_status": "formal_or_internal_validation",
+      "domain_relevance": "methodological_analogy",
+      "endpoint_status": "technical_or_surrogate",
+      "transport_context": "source_only",
+      "authority_boundary": "audit_only"
+    },
+    {
+      "name": "Jaffe-Liu picture language program",
+      "rank": "7",
+      "permission": "proof_status_or_provenance_audit_only",
+      "expected_permission": "proof_status_or_provenance_audit_only",
+      "matches_expected": "True",
+      "interpretation": "Picture-language simulation requires an explicit map before clinical claim use.",
+      "source_status": "archived_or_indexed",
+      "validation_status": "formal_or_internal_validation",
+      "domain_relevance": "methodological_analogy",
+      "endpoint_status": "none",
+      "transport_context": "source_only",
+      "authority_boundary": "audit_only"
+    }
+  ],
+  "cover_transitions_into_hard_count": 20,
+  "cover_transitions_into_hard_changed_dimensions": [
+    "authority_boundary",
+    "domain_relevance",
+    "endpoint_status",
+    "source_status",
+    "transport_context",
+    "validation_status"
+  ],
+  "figure": "figures/proof_status_poset_permissions.png",
+  "runtime_interpretation": "The permission map is a graded evidence poset. Source/proof upgrades are not exchangeable for clinical endpoint, population/context, or authority upgrades. NIETTU remains audit-only under source/proof strengthening because it has no clinical endpoint."
+}

@@ -1,0 +1,17 @@
+{
+  "sample_space_size": 144,
+  "probability_mass_total": 1.0,
+  "unsafe_promotion_event_size": 47,
+  "privacy_exceeded_event_size": 72,
+  "consent_collapsed_event_size": 72,
+  "audit_trigger_event_size": 108,
+  "safe_stop_event_size": 72,
+  "unsafe_promotion_probability": 0.1836991918728828,
+  "audit_trigger_probability": 0.38461538461538464,
+  "safe_stop_probability": 0.3076923076923077,
+  "union_identity_error": 0.0,
+  "complement_identity_error": 0.0,
+  "monotonicity_holds": true,
+  "planning_rule": "If the runtime history enters the audit-trigger event, the permitted plan is audit-only or narrowed output; if it enters unsafe-promotion, the hard claim is blocked.",
+  "interpretation": "An event is a measurable set of histories. In this finite harness, every set is measurable, so runtime assurance can be phrased as event detection plus action selection."
+}
