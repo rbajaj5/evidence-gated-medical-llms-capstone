@@ -30,7 +30,7 @@ py -3.13 -m pytest 'work\evidence_gated_llm_capstone' -q
 
 Expected validation snapshot:
 
-- `113 passed`
+- `115 passed`
 - Proposal: 2 pages
 - Summary sheet: 2 pages
 - Final paper: 20 pages

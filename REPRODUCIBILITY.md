@@ -15,7 +15,7 @@ py -3.13 -m pytest 'work\evidence_gated_llm_capstone' -q
 Expected result:
 
 ```text
-113 passed
+115 passed
 ```
 
 ## Main Experiment Scripts
