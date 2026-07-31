@@ -17,6 +17,7 @@ The project implements a synthetic runtime-assurance framework for medical LLM o
 - An oracle-consistency audit inspired by AlphaZero/Chomp/Connect Four work: strong aggregate performance is separated from exact trajectory safety.
 - A physics-informed constraint audit inspired by PIKS: empirical fit is separated from auditable structural consistency under misspecification.
 - A proxy/mass counterexample audit inspired by pluripotential theory: a vanishing local proxy is not allowed to become a no-residual-risk claim.
+- A Johnson-Lindenstrauss projection audit: geometry preservation is separated from privacy, source-population transport, and clinical validity.
 - Synthetic experiments that treat mathematical claims, diagrams, proof status, privacy permissions, and model-selection policies as auditable inputs rather than raw text alone.
 
 ## Final Package
@@ -36,7 +37,7 @@ py -3.13 -m pytest 'work\evidence_gated_llm_capstone' -q
 
 Expected validation snapshot:
 
-- `139 passed`
+- `147 passed`
 - Proposal: 2 pages
 - Summary sheet: 2 pages
 - Final paper: 20 pages
