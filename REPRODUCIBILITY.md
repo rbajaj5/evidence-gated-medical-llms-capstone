@@ -15,7 +15,7 @@ py -3.13 -m pytest 'work\evidence_gated_llm_capstone' -q
 Expected result:
 
 ```text
-120 passed
+126 passed
 ```
 
 ## Main Experiment Scripts
@@ -23,6 +23,7 @@ Expected result:
 - `run_evidence_gate_stress_test.py`: scenario/action gate for LLM-style medical claims.
 - `model_selection_claim_policy.py`: policy-model selection audit over candidate claim policies.
 - `coordination_benchmark_audit.py`: state-coverage versus protocol-assurance audit inspired by OvercookedV2.
+- `oracle_consistency_audit.py`: strong-performance versus oracle-consistent trajectory audit.
 - `zdd_sparse_claim_family.py`: sparse-family compression audit for evidence feature sets.
 - `proof_status_poset_experiment.py`: proof/provenance permission poset.
 - `picture_language_diagram_audit.py`: multimodal/diagram provenance audit.
