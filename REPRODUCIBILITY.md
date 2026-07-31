@@ -15,7 +15,7 @@ py -3.13 -m pytest 'work\evidence_gated_llm_capstone' -q
 Expected result:
 
 ```text
-133 passed
+139 passed
 ```
 
 ## Main Experiment Scripts
@@ -25,6 +25,7 @@ Expected result:
 - `coordination_benchmark_audit.py`: state-coverage versus protocol-assurance audit inspired by OvercookedV2.
 - `oracle_consistency_audit.py`: strong-performance versus oracle-consistent trajectory audit.
 - `physics_informed_constraint_audit.py`: empirical-fit versus structural-constraint consistency audit inspired by PIKS.
+- `proxy_mass_counterexample_audit.py`: vanishing-proxy versus concentrated-residual-mass audit.
 - `zdd_sparse_claim_family.py`: sparse-family compression audit for evidence feature sets.
 - `proof_status_poset_experiment.py`: proof/provenance permission poset.
 - `picture_language_diagram_audit.py`: multimodal/diagram provenance audit.

@@ -1,0 +1,88 @@
+{
+  "source": "https://arxiv.org/abs/2607.26549",
+  "case_count": 5,
+  "action_counts": {
+    "BLOCK_ZERO_PROXY_TO_ZERO_RISK": 1,
+    "ALLOW_POSITIVE_PROXY_WARNING": 1,
+    "ALLOW_REASSURANCE_WITH_STRUCTURE": 2,
+    "REQUIRE_RESIDUAL_MASS_AUDIT": 1
+  },
+  "rows": [
+    {
+      "case_id": "Z01",
+      "label": "Vanishing proxy with concentrated residual mass",
+      "local_proxy": 0.0,
+      "residual_mass": 1.0,
+      "isolated_event": true,
+      "added_structure": false,
+      "directional_witness": true,
+      "monotone_limit": true,
+      "clinical_analogy": "A local biomarker appears absent while residual event risk remains concentrated.",
+      "proxy_mass_gap": 1.0,
+      "counterexample_shape": true,
+      "action": "BLOCK_ZERO_PROXY_TO_ZERO_RISK",
+      "reason": "A vanishing proxy does not exclude concentrated residual mass."
+    },
+    {
+      "case_id": "Z02",
+      "label": "Positive proxy forces positive residual channel",
+      "local_proxy": 0.45,
+      "residual_mass": 0.62,
+      "isolated_event": true,
+      "added_structure": false,
+      "directional_witness": false,
+      "monotone_limit": false,
+      "clinical_analogy": "A strong warning signal correctly prevents a no-risk claim.",
+      "proxy_mass_gap": 0.17,
+      "counterexample_shape": false,
+      "action": "ALLOW_POSITIVE_PROXY_WARNING",
+      "reason": "Positive proxy evidence supports warning, not reassurance."
+    },
+    {
+      "case_id": "Z03",
+      "label": "Vanishing proxy with added regularity structure",
+      "local_proxy": 0.0,
+      "residual_mass": 0.0,
+      "isolated_event": true,
+      "added_structure": true,
+      "directional_witness": false,
+      "monotone_limit": false,
+      "clinical_analogy": "Extra validated structure makes the proxy-to-risk implication safer.",
+      "proxy_mass_gap": 0.0,
+      "counterexample_shape": false,
+      "action": "ALLOW_REASSURANCE_WITH_STRUCTURE",
+      "reason": "Reassurance is bounded by added structure and residual-mass audit."
+    },
+    {
+      "case_id": "Z04",
+      "label": "Low proxy with un-audited missing-mass channel",
+      "local_proxy": 0.03,
+      "residual_mass": 0.27,
+      "isolated_event": true,
+      "added_structure": false,
+      "directional_witness": false,
+      "monotone_limit": false,
+      "clinical_analogy": "A near-zero score hides unresolved risk because no residual audit was run.",
+      "proxy_mass_gap": 0.24,
+      "counterexample_shape": false,
+      "action": "REQUIRE_RESIDUAL_MASS_AUDIT",
+      "reason": "Residual mass remains material despite a weak proxy."
+    },
+    {
+      "case_id": "Z05",
+      "label": "No isolated event and low residual mass",
+      "local_proxy": 0.0,
+      "residual_mass": 0.02,
+      "isolated_event": false,
+      "added_structure": true,
+      "directional_witness": false,
+      "monotone_limit": false,
+      "clinical_analogy": "The low proxy is supported by broader context and no concentrated failure mode.",
+      "proxy_mass_gap": 0.02,
+      "counterexample_shape": false,
+      "action": "ALLOW_REASSURANCE_WITH_STRUCTURE",
+      "reason": "Reassurance is bounded by added structure and residual-mass audit."
+    }
+  ],
+  "capstone_interpretation": "A vanishing local proxy cannot by itself authorize a no-risk or no-mass claim. Medical LLM monitors should require residual-risk audits before turning proxy absence into reassurance."
+}
