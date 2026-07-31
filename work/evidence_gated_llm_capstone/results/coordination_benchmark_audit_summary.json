@@ -1,0 +1,87 @@
+{
+  "source": "https://arxiv.org/abs/2503.17821",
+  "case_count": 5,
+  "action_counts": {
+    "DO_NOT_TREAT_AS_COORDINATION_BENCHMARK": 1,
+    "REQUIRE_PROTOCOL_ASSURANCE": 3,
+    "STRESS_TEST_STATE_COVERAGE": 1
+  },
+  "rows": [
+    {
+      "case_id": "C01",
+      "label": "Fully observable kitchen-style benchmark after state augmentation",
+      "state_coverage": 0.98,
+      "asymmetric_information": false,
+      "stochasticity": false,
+      "grounded_channel": false,
+      "test_time_protocol": false,
+      "implicit_action_demo": false,
+      "clinical_analogy": "A prompt suite with broad chart states but no handoff asymmetry.",
+      "coverage_gap": 0.02,
+      "structural_coordination_score": 0,
+      "action": "DO_NOT_TREAT_AS_COORDINATION_BENCHMARK",
+      "reason": "High coverage with no asymmetry or stochasticity is too weak for coordination claims."
+    },
+    {
+      "case_id": "C02",
+      "label": "Grounded communication under partial observability",
+      "state_coverage": 0.97,
+      "asymmetric_information": true,
+      "stochasticity": true,
+      "grounded_channel": true,
+      "test_time_protocol": false,
+      "implicit_action_demo": false,
+      "clinical_analogy": "A monitor where one role sees a lab trend and another role acts.",
+      "coverage_gap": 0.03,
+      "structural_coordination_score": 2,
+      "action": "REQUIRE_PROTOCOL_ASSURANCE",
+      "reason": "Coverage alone is insufficient once hidden information, stochasticity, or online protocols matter."
+    },
+    {
+      "case_id": "C03",
+      "label": "Test-time protocol formation with feedback",
+      "state_coverage": 0.97,
+      "asymmetric_information": true,
+      "stochasticity": true,
+      "grounded_channel": false,
+      "test_time_protocol": true,
+      "implicit_action_demo": false,
+      "clinical_analogy": "A family-consent or shift-handoff protocol that must be formed online.",
+      "coverage_gap": 0.03,
+      "structural_coordination_score": 4,
+      "action": "REQUIRE_PROTOCOL_ASSURANCE",
+      "reason": "Coverage alone is insufficient once hidden information, stochasticity, or online protocols matter."
+    },
+    {
+      "case_id": "C04",
+      "label": "Implicit demonstration through action",
+      "state_coverage": 0.97,
+      "asymmetric_information": true,
+      "stochasticity": true,
+      "grounded_channel": false,
+      "test_time_protocol": true,
+      "implicit_action_demo": true,
+      "clinical_analogy": "A clinician action, gesture, or note timing carries meaning not in text.",
+      "coverage_gap": 0.03,
+      "structural_coordination_score": 5,
+      "action": "REQUIRE_PROTOCOL_ASSURANCE",
+      "reason": "Coverage alone is insufficient once hidden information, stochasticity, or online protocols matter."
+    },
+    {
+      "case_id": "C05",
+      "label": "Low coverage benchmark with no structural coordination challenge",
+      "state_coverage": 0.62,
+      "asymmetric_information": false,
+      "stochasticity": false,
+      "grounded_channel": false,
+      "test_time_protocol": false,
+      "implicit_action_demo": false,
+      "clinical_analogy": "A brittle prompt test that fails because common states are missing.",
+      "coverage_gap": 0.38,
+      "structural_coordination_score": 0,
+      "action": "STRESS_TEST_STATE_COVERAGE",
+      "reason": "Failure can plausibly be explained by missing state coverage."
+    }
+  ],
+  "capstone_interpretation": "A medical LLM benchmark should distinguish ordinary state coverage from genuine clinician-AI coordination under asymmetric information, stochastic workflow, implicit communication, and test-time protocol formation."
+}

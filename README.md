@@ -13,6 +13,7 @@ The project implements a synthetic runtime-assurance framework for medical LLM o
 - A bounded, non-clinical evidence gate for clinician-facing medical LLM claims.
 - A surrogate-versus-hard-outcomes distinction inspired by the course's LLM evaluation assignment.
 - Runtime-assurance tests for overclaiming, fabricated citations, stale evidence, source-population mismatch, family-linked genetic privacy, and multimodal/provenance transfer.
+- A coordination-benchmark audit inspired by OvercookedV2: state coverage is separated from genuine test-time protocol formation under asymmetric information.
 - Synthetic experiments that treat mathematical claims, diagrams, proof status, privacy permissions, and model-selection policies as auditable inputs rather than raw text alone.
 
 ## Final Package
@@ -32,7 +33,7 @@ py -3.13 -m pytest 'work\evidence_gated_llm_capstone' -q
 
 Expected validation snapshot:
 
-- `115 passed`
+- `120 passed`
 - Proposal: 2 pages
 - Summary sheet: 2 pages
 - Final paper: 20 pages
