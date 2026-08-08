@@ -2,58 +2,59 @@
 
 [![tests](https://github.com/rbajaj5/evidence-gated-medical-llms-capstone/actions/workflows/tests.yml/badge.svg)](https://github.com/rbajaj5/evidence-gated-medical-llms-capstone/actions/workflows/tests.yml)
 
-Public research artifact for the Module 14 AI-in-healthcare capstone:
+Public research artifact for the Module 14 AI-in-healthcare capstone.
 
-**Surrogate-Aware Runtime Assurance for Agentic Medical LLMs: Preventing Evidence Overclaiming in Clinician-Facing AI Systems**
+## Active submission-facing project
 
-The project implements a synthetic runtime-assurance framework for medical LLM outputs. It tests whether an LLM-style claim should be allowed, narrowed, audited, stress-tested, or denied based on evidence currency, endpoint strength, source-population context, privacy/consent boundaries, and proof/provenance status.
+**Evidence-Gated Medical LLM Alerts for Pharmacogenomic Claims: Detecting Overclaiming Relative to Guideline-Supported Evidence**
+
+This repository now treats pruning as the main methodological move. The active capstone package narrows the project to one clinically interpretable workflow: LLM-drafted pharmacogenomic or genomic medication-alert text. The implemented gate checks only three things:
+
+1. Endpoint/actionability.
+2. Population fit.
+3. Citation/guideline support.
+
+The Stage 1 result is a synthetic construct-validity scaffold, not a clinical safety or patient-outcome claim. The planned Stage 2 study compares ungated and gated LLM drafts on independently authored cases with blinded reviewer adjudication.
 
 ## What This Contributes
 
-- A bounded, non-clinical evidence gate for clinician-facing medical LLM claims.
-- A surrogate-versus-hard-outcomes distinction inspired by the course's LLM evaluation assignment.
-- Runtime-assurance tests for overclaiming, fabricated citations, stale evidence, source-population mismatch, family-linked genetic privacy, and multimodal/provenance transfer.
-- A coordination-benchmark audit inspired by OvercookedV2: state coverage is separated from genuine test-time protocol formation under asymmetric information.
-- An oracle-consistency audit inspired by AlphaZero/Chomp/Connect Four work: strong aggregate performance is separated from exact trajectory safety.
-- A physics-informed constraint audit inspired by PIKS: empirical fit is separated from auditable structural consistency under misspecification.
-- A proxy/mass counterexample audit inspired by pluripotential theory: a vanishing local proxy is not allowed to become a no-residual-risk claim.
-- A Johnson-Lindenstrauss projection audit: geometry preservation is separated from privacy, source-population transport, and clinical validity.
-- Synthetic experiments that treat mathematical claims, diagrams, proof status, privacy permissions, and model-selection policies as auditable inputs rather than raw text alone.
+- A bounded, non-clinical evidence gate for pharmacogenomic/genomic medication-alert text.
+- A concrete overclaiming benchmark for cases where guideline support, source population, or actionability is weaker than the drafted LLM language.
+- Stage 1 metrics for overclaim reduction, inappropriate denial, sensitivity, specificity, calibration, and error categories.
+- A clean package that excludes unrelated exploratory components from the submission-facing artifact.
 
-## Final Package
+## Pruned Package
 
-- `outputs/Module_14_Capstone_Evidence_Gated_Medical_LLMs_Package_Ravi_Bajaj.zip`
-- `outputs/Module_14_Capstone_Evidence_Gated_Medical_LLMs_Package_Ravi_Bajaj/`
+- `outputs/Module_14_Capstone_Pruned_Evidence_Gate_Package_Ravi_Bajaj.zip`
+- `outputs/Module_14_Capstone_Pruned_Evidence_Gate_Package_Ravi_Bajaj/`
 
-The package contains the proposal, final paper, summary sheet, technical supplement, PDFs, executable tests, CSV/JSON results, figures, demo media, and manifest.
+The package contains the proposal, paper draft, summary sheet, technical supplement, PDFs, executable tests, CSV/JSON results, figures, safety note, README, and manifest.
 
 ## Quick Start
 
 ```powershell
 py -3.13 -m pip install -r requirements.txt
-$env:PYTHONPATH=(Resolve-Path 'work\evidence_gated_llm_capstone').Path
-py -3.13 -m pytest 'work\evidence_gated_llm_capstone' -q
+$env:PYTHONPATH=(Resolve-Path 'work\pruned_evidence_gate').Path
+py -3.13 'work\pruned_evidence_gate\pruned_evidence_gate.py'
+py -3.13 -m pytest 'work\pruned_evidence_gate' -q
 ```
 
-Expected validation snapshot:
+Expected pruned validation snapshot:
 
-- `147 passed`
-- Proposal: 2 pages
-- Summary sheet: 2 pages
-- Final paper: 20 pages
-- Technical supplement: 24 pages
+- `6 passed`
+- 30 synthetic cases
+- 20 ungated overclaims
+- 0 gated remaining overclaims
+- 0 inappropriate denials
 
 ## File Map
 
-- `work/evidence_gated_llm_capstone/`: synthetic assurance experiments and tests.
-- `work/build_evidence_gated_llm_capstone_package.py`: deterministic package builder.
+- `work/pruned_evidence_gate/`: pruned pharmacogenomic evidence-gate evaluator and tests.
+- `work/build_pruned_evidence_gate_package.py`: deterministic pruned package builder.
+- `work/evidence_gated_llm_capstone/`: legacy exploratory harness retained for provenance, not the active submission-facing package.
+- `work/build_evidence_gated_llm_capstone_package.py`: legacy broad package builder.
 - `work/export_docx_with_word.py`: Word-to-PDF export helper.
-- `outputs/.../paper/`: final paper in DOCX and PDF.
-- `outputs/.../proposal/`: proposal in DOCX and PDF.
-- `outputs/.../summary/`: required summary sheet in DOCX and PDF.
-- `outputs/.../supplement/`: technical supplement in DOCX and PDF.
-- `outputs/.../results/`: generated CSV/JSON evidence.
-- `outputs/.../figures/`: generated figures used in the written package.
+- `outputs/Module_14_Capstone_Pruned_Evidence_Gate_Package_Ravi_Bajaj/`: active deliverable package.
 
 ## Public Notes
 

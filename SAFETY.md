@@ -1,35 +1,45 @@
 # Safety and Data Boundary
 
-This repository is a synthetic research artifact for a course capstone. It is designed to evaluate evidence-governance logic for medical LLM outputs, not to provide clinical guidance.
+This repository is a synthetic research artifact for a course capstone. It is designed to evaluate evidence-governance logic for medical LLM alert text, not to provide clinical guidance.
+
+## Active Scope
+
+The active submission-facing package studies one workflow:
+
+```text
+LLM-drafted pharmacogenomic or genomic medication-alert text.
+```
+
+The implemented controller checks three evidence gates:
+
+1. Endpoint/actionability.
+2. Population fit.
+3. Citation/guideline support.
 
 ## Explicit Non-Use Claims
 
 - No real patient data is used.
+- No protected health information is used.
+- No private genomic data is used.
 - No clinical diagnosis is produced.
 - No treatment recommendation is produced.
 - No clinical-effectiveness claim is validated.
-- No deployment integration is provided.
-- No EHR connection, medical device connection, wearable-device connection, or live model endpoint is included.
+- No EHR connection, medical-device connection, wearable-device connection, or live model endpoint is included.
 
 ## Assurance Boundary
 
-The framework treats LLM output as a candidate claim requiring runtime checks. The gate can allow, narrow, audit, stress-test, or deny a claim depending on evidence status and context. In the capstone artifact, these checks are synthetic and deterministic.
+The gate evaluates permission to state or display a claim. It may allow bounded alert language, narrow the claim, abstain because population fit or citation support is insufficient, or deny unsupported action language.
 
-The submitted framework is about permission to state a claim, not permission to act on a patient.
+The submitted framework is about claim discipline, not permission to act on a patient.
 
-## Genetics and Family Data Boundary
+## Stage 1 Versus Stage 2
 
-The genetics portion is framed as a governance and privacy problem. It uses synthetic examples to reason about family-linked consent, source-population mismatch, and graded access to genetic information. It does not process real genomic data and does not generate polygenic risk scores.
+Stage 1 uses 30 author-designed synthetic cases to verify that the gate follows the intended policy. These are construct-validity results only.
 
-## Intended Review Use
+Stage 2 would require independently authored cases and blinded reviewer adjudication by qualified clinicians, pharmacogenomics reviewers, or pharmacists. That stage would report overclaim reduction, inappropriate denial, calibration, interrater agreement, and error categories.
 
-The repository is suitable for reviewing:
+## Genetics Boundary
 
-- research proposal logic,
-- reproducible synthetic experiments,
-- runtime-assurance design,
-- transparency of generative-AI use,
-- evidence-overclaiming safeguards,
-- and future directions for responsible clinical evaluation.
+Public guideline and database names are used as evidence anchors and population-fit examples. The project does not compute polygenic risk scores, infer traits, process family genomes, or issue pharmacogenomic guidance for a real person.
 
 It is not suitable for clinical or patient-facing use.

@@ -1,6 +1,13 @@
 # Reproducibility
 
-This repository is intentionally dependency-light. The executable part of the capstone is a set of synthetic Python experiments and tests under `work/evidence_gated_llm_capstone/`.
+This repository now has a pruned submission-facing path and a legacy exploratory path. The active capstone package is built from:
+
+```text
+work/pruned_evidence_gate/
+work/build_pruned_evidence_gate_package.py
+```
+
+The earlier broad harness under `work/evidence_gated_llm_capstone/` is retained for provenance, but it is not the active reviewer-facing project.
 
 ## Environment
 
@@ -8,51 +15,44 @@ Tested locally with Python 3.13 on Windows.
 
 ```powershell
 py -3.13 -m pip install -r requirements.txt
-$env:PYTHONPATH=(Resolve-Path 'work\evidence_gated_llm_capstone').Path
-py -3.13 -m pytest 'work\evidence_gated_llm_capstone' -q
+$env:PYTHONPATH=(Resolve-Path 'work\pruned_evidence_gate').Path
+py -3.13 'work\pruned_evidence_gate\pruned_evidence_gate.py'
+py -3.13 -m pytest 'work\pruned_evidence_gate' -q
 ```
 
-Expected result:
+Expected focused-test result:
 
 ```text
-147 passed
+6 passed
 ```
 
-## Main Experiment Scripts
-
-- `run_evidence_gate_stress_test.py`: scenario/action gate for LLM-style medical claims.
-- `model_selection_claim_policy.py`: policy-model selection audit over candidate claim policies.
-- `coordination_benchmark_audit.py`: state-coverage versus protocol-assurance audit inspired by OvercookedV2.
-- `oracle_consistency_audit.py`: strong-performance versus oracle-consistent trajectory audit.
-- `physics_informed_constraint_audit.py`: empirical-fit versus structural-constraint consistency audit inspired by PIKS.
-- `proxy_mass_counterexample_audit.py`: vanishing-proxy versus concentrated-residual-mass audit.
-- `jl_projection_geometry_audit.py`: Johnson-Lindenstrauss geometry-preservation versus privacy/source/clinical-claim audit.
-- `zdd_sparse_claim_family.py`: sparse-family compression audit for evidence feature sets.
-- `proof_status_poset_experiment.py`: proof/provenance permission poset.
-- `picture_language_diagram_audit.py`: multimodal/diagram provenance audit.
-- `loop_equation_runtime_stability.py`: synthetic loop-equation and Gronwall-style stability probe.
-- `branch_factor_path_stability.py`: branch-factor and near-collision stability probe.
-- `consent_aggregation_experiment.py`: ranked family-consent privacy-budget experiment.
-- `mahalanobis_covariate_experiment.py`: source-population covariate distance probe.
-- `hex_boundary_invariant_experiment.py` and `hex_scaling_coarse_grain_experiment.py`: boundary/coarse-graining checks used as assurance analogies.
-
-## Generated Artifacts
-
-Generated CSV and JSON outputs are committed under:
+Expected Stage 1 metric snapshot:
 
 ```text
-work/evidence_gated_llm_capstone/results/
-outputs/Module_14_Capstone_Evidence_Gated_Medical_LLMs_Package_Ravi_Bajaj/results/
+case_count: 30
+workflow: pharmacogenomic/genomic medication-alert text
+ungated_overclaim_count: 20
+gated_remaining_overclaim_count: 0
+sensitivity_overclaim_detection: 1.0
+specificity_aligned_claim_allowance: 1.0
+inappropriate_denial_count: 0
 ```
 
-The final course-facing package is:
+## Build the Package
+
+```powershell
+py -3.13 'work\build_pruned_evidence_gate_package.py'
+```
+
+This writes:
 
 ```text
-outputs/Module_14_Capstone_Evidence_Gated_Medical_LLMs_Package_Ravi_Bajaj.zip
+outputs/Module_14_Capstone_Pruned_Evidence_Gate_Package_Ravi_Bajaj/
+outputs/Module_14_Capstone_Pruned_Evidence_Gate_Package_Ravi_Bajaj.zip
 ```
 
-The package manifest is:
+The package includes DOCX and PDF versions of the proposal, paper draft, summary sheet, and technical supplement; the synthetic case bank; CSV/JSON results; figures; and a SHA256 manifest.
 
-```text
-outputs/Module_14_Capstone_Evidence_Gated_Medical_LLMs_Package_Ravi_Bajaj/MANIFEST_SHA256.csv
-```
+## Scope Boundary
+
+The active experiment is a construct-validity scaffold. It tests whether a deterministic three-gate controller follows an intended evidence grammar on author-designed synthetic cases. It does not prove independent safety, clinical accuracy, generalization, or patient benefit.

@@ -20,12 +20,20 @@ outputs/*
 !outputs/Module_14_Capstone_Evidence_Gated_Medical_LLMs_Package_Ravi_Bajaj.zip
 !outputs/Module_14_Capstone_Evidence_Gated_Medical_LLMs_Package_Ravi_Bajaj/
 !outputs/Module_14_Capstone_Evidence_Gated_Medical_LLMs_Package_Ravi_Bajaj/**
+!outputs/Module_14_Capstone_Pruned_Evidence_Gate_Package_Ravi_Bajaj.zip
+!outputs/Module_14_Capstone_Pruned_Evidence_Gate_Package_Ravi_Bajaj/
+!outputs/Module_14_Capstone_Pruned_Evidence_Gate_Package_Ravi_Bajaj/**
 
 # Keep only reproducible capstone source under work.
 work/*
 !work/build_evidence_gated_llm_capstone_package.py
+!work/build_pruned_evidence_gate_package.py
 !work/export_docx_with_word.py
 !work/evidence_gated_llm_capstone/
 !work/evidence_gated_llm_capstone/**
+!work/pruned_evidence_gate/
+!work/pruned_evidence_gate/**
 work/evidence_gated_llm_capstone/__pycache__/
 work/evidence_gated_llm_capstone/.pytest_cache/
+work/pruned_evidence_gate/__pycache__/
+work/pruned_evidence_gate/.pytest_cache/
